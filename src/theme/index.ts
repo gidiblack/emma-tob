@@ -53,9 +53,19 @@ const fonts = {
   bold: `'Neue Montreal Bold', sans-serif`,
 };
 
+const breakpoints = {
+  sm: "22.5em", // 360px
+  md: "48em", // 768px
+  lg: "62em", // 992px
+  xl: "80em", // 1280px
+  "2xl": "90em", // 1440px
+  "3xl": "96em", // 1536px
+};
+
 const overrides = {
   colors,
   fonts,
+  breakpoints,
   styles: { global },
   components: { Button, Input, Textarea, Select },
 };

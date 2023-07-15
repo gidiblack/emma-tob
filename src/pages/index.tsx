@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import {
   Box,
   Button,
@@ -10,7 +11,8 @@ import {
 
 export default function Home() {
   return (
-    <Box minH={"100vh"} textAlign={"center"}>
+    <Box minH={"100vh"} pos={"relative"} textAlign={"center"} pt={"5rem"}>
+      <Navbar />
       <Heading as={"h1"} textAlign={"center"} my={10} fontWeight={"extrabold"}>
         EMMA-TOB
       </Heading>
