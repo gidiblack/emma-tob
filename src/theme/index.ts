@@ -1,8 +1,9 @@
 import { extendTheme } from "@chakra-ui/react";
 import global from "./global";
 import Button from "./button";
-// import Form from "./components/form";
-// import Input from "./components/input";
+import Textarea from "./textarea";
+import Input from "./input";
+import Select from "./select";
 
 const colors = {
   brand: {
@@ -56,7 +57,7 @@ const overrides = {
   colors,
   fonts,
   styles: { global },
-  components: { Button },
+  components: { Button, Input, Textarea, Select },
 };
 
 export default extendTheme(overrides);

@@ -1,4 +1,12 @@
-import { Box, Button, Heading, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Heading,
+  Input,
+  Select,
+  Text,
+  Textarea,
+} from "@chakra-ui/react";
 
 export default function Home() {
   return (
@@ -20,13 +28,21 @@ export default function Home() {
         market.
       </Text>
 
-      <Button mt={5}>Click me</Button>
-      <Button mt={5} variant={"transparent"} size={"lg"}>
+      <Button my={5}>Click me</Button>
+      <Button my={5} variant={"transparent"} size={"lg"}>
         Click me again
       </Button>
-      <Button mt={5} variant={"outline"} size={"sm"}>
+      <Button my={5} variant={"outline"} size={"sm"}>
         Click me again again
       </Button>
+      <Input placeholder="Some placeholder" w={"65%"} />
+      <Textarea
+        placeholder="Textarea placeholder"
+        w={"65%"}
+        mx={"auto"}
+        mt={8}
+      />
+      <Select placeholder="Choose one" w={"65%"} mx={"auto"} mt={8} />
     </Box>
   );
 }
