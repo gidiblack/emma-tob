@@ -1,6 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 import global from "./global";
-// import Button from "./components/button";
+import Button from "./button";
 // import Form from "./components/form";
 // import Input from "./components/input";
 
@@ -48,18 +48,15 @@ const colors = {
 const fonts = {
   heading: `'Lato', sans`,
   body: `'Neue Montreal', sans-serif`,
-  bodyItalic: `'Neue Montreal Italic', sans-serif`,
   medium: `'Neue Montreal Medium', sans-serif`,
-  mediumItalic: `'Neue Montreal MediumItalic', sans-serif`,
   bold: `'Neue Montreal Bold', sans-serif`,
-  boldItalic: `'Neue Montreal BoldItalic', sans-serif`,
 };
 
 const overrides = {
   colors,
   fonts,
   styles: { global },
-  // components: { Button, Form, Input },
+  components: { Button },
 };
 
 export default extendTheme(overrides);

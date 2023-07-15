@@ -1,8 +1,8 @@
-import { Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, Text } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <>
+    <Box minH={"100vh"} textAlign={"center"}>
       <Heading as={"h1"} textAlign={"center"} my={10} fontWeight={"extrabold"}>
         EMMA-TOB
       </Heading>
@@ -19,6 +19,14 @@ export default function Home() {
         reduce their production costs, giving them a competitive edge in the
         market.
       </Text>
-    </>
+
+      <Button mt={5}>Click me</Button>
+      <Button mt={5} variant={"transparent"} size={"lg"}>
+        Click me again
+      </Button>
+      <Button mt={5} variant={"outline"} size={"sm"}>
+        Click me again again
+      </Button>
+    </Box>
   );
 }
