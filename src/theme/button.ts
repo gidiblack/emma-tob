@@ -6,6 +6,7 @@ const Button: ComponentStyleConfig = {
     fontFamily: "'Lato', sans",
     borderRadius: "8px",
     lineHeight: 0,
+    width: "max-content",
     _hover: {
       transform: "scale(1.04)",
     },

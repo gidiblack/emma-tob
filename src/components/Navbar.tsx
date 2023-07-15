@@ -73,6 +73,7 @@ export default function Navbar() {
       top={0}
       left={0}
       right={0}
+      zIndex={"sticky"}
     >
       <Flex py={4} align={"center"} justify={"space-between"}>
         <Link as={NextLink} href={"/"}>
