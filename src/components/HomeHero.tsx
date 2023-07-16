@@ -81,16 +81,16 @@ function HomeHero() {
     ml: `-${currentSlide * 100}%`,
   };
 
-  useEffect(() => {
-    const id = setInterval(
-      () => setCurrentSlide((s) => (s === slidesCount - 1 ? 0 : s + 1)),
-      5000
-    );
+  // useEffect(() => {
+  //   const autoplay = setInterval(
+  //     () => setCurrentSlide((s) => (s === slidesCount - 1 ? 0 : s + 1)),
+  //     5000
+  //   );
 
-    return () => {
-      clearInterval(id);
-    };
-  }, [slidesCount]);
+  //   return () => {
+  //     clearInterval(autoplay);
+  //   };
+  // }, [slidesCount]);
 
   return (
     <Box
@@ -98,14 +98,18 @@ function HomeHero() {
       textAlign={"center"}
       bg={"linear-gradient(180deg, #DDE3F0 0%, rgba(193, 211, 255, 0.38) 100%)"}
       px={"1rem"}
-      py={"3.5rem"}
+      py={{ base: "2rem", md: "2.875rem", lg: "3.5rem" }}
       pos={"relative"}
     >
       <Heading as={"h1"} letterSpacing={"2px"} mb={8} fontWeight={"extrabold"}>
         EMMA-TOB Technologies Ltd.
       </Heading>
       <Flex w="full" pos="relative" overflow="hidden">
-        <Flex h="37rem" w="full" {...carouselStyle}>
+        <Flex
+          h={{ base: "28rem", md: "30rem", lg: "37rem" }}
+          w="full"
+          {...carouselStyle}
+        >
           {slides.map((slide, sid) => (
             <Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
               <Image
@@ -117,8 +121,8 @@ function HomeHero() {
               />
               <Box
                 bg={{
-                  base: "linear-gradient(180deg, #000 17.25%, rgba(0, 0, 0, 0.00) 20.45%)",
-                  md: "linear-gradient(195deg, #000 20.75%, rgba(0, 0, 0, 0.00) 30.55%)",
+                  base: "linear-gradient(180deg, #000 21.25%, rgba(0, 0, 0, 0.00) 24.45%)",
+                  md: "linear-gradient(195deg, #000 21.75%, rgba(0, 0, 0, 0.00) 30.55%)",
                   lg: "linear-gradient(193deg, #000 18.75%, rgba(0, 0, 0, 0.00) 32.65%)",
                 }}
                 pos="absolute"
@@ -127,18 +131,18 @@ function HomeHero() {
                 top={0}
               >
                 <Stack
-                  p={6}
+                  p={[3, 4, 4, 5, 6]}
                   bottom="24px"
                   textAlign={{ base: "center", md: "right" }}
                   w="full"
-                  spacing={3}
+                  spacing={[1, null, 1.5, 2, 3]}
                   color="gray.50"
                   ml={"auto"}
                   maxW={{ md: "18rem", lg: "20.5rem" }}
                 >
                   <Text
                     as={"h3"}
-                    fontSize={[20, null, 22, 24]}
+                    fontSize={[18, null, 20, 22, 24]}
                     fontFamily={"Lato"}
                     fontWeight={"semibold"}
                   >
