@@ -30,11 +30,7 @@ const Links = [
     href: routes.aboutus,
   },
   {
-    label: (
-      <Button size={{ base: "sm", md: "md" }} mx={-2.5}>
-        Contact us
-      </Button>
-    ),
+    label: <Button mx={-2.5}>Contact us</Button>,
     href: routes.contactus,
   },
 ];
@@ -103,7 +99,7 @@ export default function Navbar() {
 
       <Collapse in={isOpen} animateOpacity>
         <Box pb={4} display={{ lg: "none" }} transition={"all ease .25s"}>
-          <Stack as={"nav"} spacing={5}>
+          <Stack as={"nav"} spacing={3} textAlign={"center"}>
             {Links.map(({ label, href }, index) => (
               <NavLink key={index} href={href}>
                 {label}

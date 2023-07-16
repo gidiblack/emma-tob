@@ -92,10 +92,16 @@ export default function Home() {
           mt={[8, null, 12, 16]}
         >
           {products.map(({ name, img }, i) => (
-            <GridItem colSpan={3} key={i}>
+            <GridItem colSpan={{ base: 3, lg: 4, xl: 3 }} key={i}>
               <OptimizedImage
                 src={img}
-                h={"17.875rem"}
+                h={{
+                  base: "16rem",
+                  md: "16.5rem",
+                  xl: "17rem",
+                  "2xl": "17.875rem",
+                  "3xl": "20rem",
+                }}
                 w={"full"}
                 borderRadius={"10px"}
                 objectFit={"cover"}
@@ -103,7 +109,7 @@ export default function Home() {
               />
               <Text
                 fontFamily={"Lato"}
-                mt={6}
+                mt={[3, null, 4, 5]}
                 fontSize={[18, null, 20]}
                 fontWeight={"medium"}
                 color={"gray.900"}
