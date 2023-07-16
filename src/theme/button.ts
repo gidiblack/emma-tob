@@ -2,8 +2,8 @@ import { ComponentStyleConfig } from "@chakra-ui/react";
 
 const Button: ComponentStyleConfig = {
   baseStyle: {
-    fontWeight: "500",
-    fontFamily: "'Lato', sans",
+    fontWeight: "600",
+    fontFamily: "Lato",
     borderRadius: "8px",
     lineHeight: 0,
     width: "max-content",

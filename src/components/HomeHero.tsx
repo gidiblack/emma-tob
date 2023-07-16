@@ -101,9 +101,9 @@ function HomeHero() {
       py={{ base: "2rem", md: "2.875rem", lg: "3.5rem" }}
       pos={"relative"}
     >
-      <Heading as={"h1"} letterSpacing={"2px"} mb={8} fontWeight={"extrabold"}>
+      <Text as={"h1"} mb={8} fontWeight={"extrabold"}>
         EMMA-TOB Technologies Ltd.
-      </Heading>
+      </Text>
       <Flex w="full" pos="relative" overflow="hidden">
         <Flex
           h={{ base: "28rem", md: "30rem", lg: "37rem" }}

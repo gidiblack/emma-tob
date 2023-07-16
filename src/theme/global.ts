@@ -7,12 +7,16 @@ export const global = {
   h1: {
     color: "dark.500",
     fontWeight: "700",
-    fontSize: "2.75rem",
+    fontSize: { base: "2.25rem", md: "2.5rem", lg: "2.75rem" },
+    fontFamily: "Lato",
+    letterSpacing: "2px",
   },
   h2: {
     color: "dark.500",
     fontWeight: "700",
-    fontSize: "2.5rem",
+    fontSize: { base: "2rem", md: "2.25rem", lg: "2.5rem" },
+    fontFamily: "Lato",
+    letterSpacing: "1px",
   },
   p: {
     fontSize: "0.875rem",

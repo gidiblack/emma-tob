@@ -1,3 +1,4 @@
+import ContactTabs from "@/components/ContactTabs";
 import HomeHero from "@/components/HomeHero";
 import PageSection from "@/components/PageSection";
 import { Text } from "@chakra-ui/react";
@@ -22,6 +23,12 @@ export default function Home() {
           significantly reduce their production costs, giving them a competitive
           edge in the market.
         </Text>
+      </PageSection>
+      <PageSection>
+        <Text as={"h2"} textAlign={"center"} mb={8}>
+          GET IN TOUCH
+        </Text>
+        <ContactTabs />
       </PageSection>
     </>
   );
