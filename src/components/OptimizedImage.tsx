@@ -5,6 +5,7 @@ const OptimizedImage = ({
   src,
   alt,
   objectFit = "contain",
+  borderRadius,
   ...props
 }: ImageProps) => {
   const OptimizedImg = chakra(NextImage, {
@@ -18,6 +19,7 @@ const OptimizedImage = ({
         layout="fill"
         objectFit={objectFit}
         alt={alt || ""}
+        borderRadius={borderRadius}
       />
     </Box>
   );
