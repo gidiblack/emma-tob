@@ -99,16 +99,16 @@ function HomeHero() {
     ml: `-${currentSlide * 100}%`,
   };
 
-  // useEffect(() => {
-  //   const autoplay = setInterval(
-  //     () => setCurrentSlide((s) => (s === slidesCount - 1 ? 0 : s + 1)),
-  //     5000
-  //   );
+  useEffect(() => {
+    const autoplay = setInterval(
+      () => setCurrentSlide((s) => (s === slidesCount - 1 ? 0 : s + 1)),
+      5000
+    );
 
-  //   return () => {
-  //     clearInterval(autoplay);
-  //   };
-  // }, [slidesCount]);
+    return () => {
+      clearInterval(autoplay);
+    };
+  }, [slidesCount]);
 
   return (
     <Box
@@ -124,7 +124,7 @@ function HomeHero() {
       </Text>
       <Flex w="full" pos="relative" overflow="hidden">
         <Flex
-          h={{ base: "28rem", md: "30rem", lg: "37rem", xl: "40rem" }}
+          h={{ base: "28rem", md: "30rem", lg: "35rem", xl: "37.5rem" }}
           w="full"
           {...carouselStyle}
         >
