@@ -12,6 +12,14 @@ import {
 import React, { useEffect, useState } from "react";
 import routes from "./routes";
 import NextLink from "next/link";
+import slide1 from "@/assets/ball-bearings-bg.png";
+import slide2 from "@/assets/metallic-factory-machine.jpg";
+import slide3 from "@/assets/different-car-accessories-arrangement.jpg";
+import slide4 from "@/assets/closeup-metal-cog-gears.jpg";
+import slide5 from "@/assets/architectural-blueprints.jpg";
+import slide6 from "@/assets/spare-parts-car.jpg";
+import slide7 from "@/assets/male-apprentice-engineer-working-on.jpg";
+import OptimizedImage from "./OptimizedImage";
 
 function HomeHero() {
   const arrowStyles: BoxProps = {
@@ -35,29 +43,39 @@ function HomeHero() {
   };
   const slides = [
     {
-      img: "https://images.pexels.com/photos/2599537/pexels-photo-2599537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      img: slide1.src,
       label: "Production of Intricate Industrial Parts",
       description: "Nulla vitae elit libero, a pharetra augue mollis interdum.",
     },
     {
-      img: "https://images.pexels.com/photos/2714581/pexels-photo-2714581.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      label: "Second Slide",
+      img: slide2.src,
+      label: "Precision Engineering",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
-      img: "https://images.pexels.com/photos/2878019/pexels-photo-2878019.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-      label: "Third Slide",
+      img: slide3.src,
+      label: "Fabrication",
       description:
         "Praesent commodo cursus magna, vel scelerisque nisl consectetur.",
     },
     {
-      img: "https://images.pexels.com/photos/1142950/pexels-photo-1142950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      label: "Fourth Slide",
+      img: slide4.src,
+      label: "SIS Welding",
       description: "Nulla vitae elit libero, a pharetra augue mollis interdum.",
     },
     {
-      img: "https://images.pexels.com/photos/3124111/pexels-photo-3124111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      label: "Fifth Slide",
+      img: slide5.src,
+      label: "Line Improvements",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    },
+    {
+      img: slide6.src,
+      label: "Industrial spare parts",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    },
+    {
+      img: slide7.src,
+      label: "Training and Consultancy",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
   ];
@@ -106,17 +124,17 @@ function HomeHero() {
       </Text>
       <Flex w="full" pos="relative" overflow="hidden">
         <Flex
-          h={{ base: "28rem", md: "30rem", lg: "37rem" }}
+          h={{ base: "28rem", md: "30rem", lg: "37rem", xl: "40rem" }}
           w="full"
           {...carouselStyle}
         >
           {slides.map((slide, sid) => (
             <Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
-              <Image
+              <OptimizedImage
                 src={slide.img}
                 alt="carousel image"
                 boxSize="full"
-                backgroundSize="cover"
+                objectFit="cover"
                 borderRadius={12}
               />
               <Box
