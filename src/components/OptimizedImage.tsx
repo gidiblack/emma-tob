@@ -9,14 +9,14 @@ const OptimizedImage = ({
   ...props
 }: ImageProps) => {
   const OptimizedImg = chakra(NextImage, {
-    shouldForwardProp: (prop) => ["layout", "src", "alt"].includes(prop),
+    shouldForwardProp: (prop) => ["fill", "src", "alt"].includes(prop),
   });
 
   return (
     <Box pos="relative" {...props}>
       <OptimizedImg
         src={src as string}
-        layout="fill"
+        fill={true}
         objectFit={objectFit}
         alt={alt || ""}
         borderRadius={borderRadius}
