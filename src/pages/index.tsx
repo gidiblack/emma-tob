@@ -74,51 +74,51 @@ export default function Home() {
   const clients = [
     {
       name: "Unilever logo",
-      img: Unilever.src,
+      img: Unilever,
     },
     {
       name: "Twinings logo",
-      img: Twinings.src,
+      img: Twinings,
     },
     {
       name: "Nestle",
-      img: Nestle.src,
+      img: Nestle,
     },
     {
       name: "Gsk",
-      img: Gsk.src,
+      img: Gsk,
     },
     {
       name: "Sweet Nutrition",
-      img: SweetNutrition.src,
+      img: SweetNutrition,
     },
     {
       name: "Perfetti",
-      img: Perfetti.src,
+      img: Perfetti,
     },
     {
       name: "Suntory logo",
-      img: Suntory.src,
+      img: Suntory,
     },
     {
       name: "Mr Chef logo",
-      img: MrChef.src,
+      img: MrChef,
     },
     {
       name: "GB Foods",
-      img: GbFoods.src,
+      img: GbFoods,
     },
     {
       name: "AB Foods",
-      img: ApFoods.src,
+      img: ApFoods,
     },
     {
       name: "Bayswater",
-      img: Bayswater.src,
+      img: Bayswater,
     },
     {
       name: "ReckittBenckiser",
-      img: ReckittBenckiser.src,
+      img: ReckittBenckiser,
     },
   ];
 
@@ -261,7 +261,7 @@ export default function Home() {
                 }}
                 w={"full"}
                 borderRadius={"10px"}
-                objectFit={"cover"}
+                objectFit="cover"
                 alt={name}
               />
               <Text
@@ -303,12 +303,13 @@ export default function Home() {
             {clients.map(({ img, name }, i) => (
               <div key={i}>
                 <OptimizedImage
-                  src={img}
+                  src={img.src}
                   w={{ base: "9rem", md: "10rem", lg: "11.25rem" }}
                   h={{ base: "5rem", md: "5.5rem", lg: "6.25rem" }}
                   borderRadius={"8px"}
                   mx={"auto"}
                   alt={name}
+                  blurDataURL={img.blurDataURL}
                 />
               </div>
             ))}
@@ -367,7 +368,8 @@ const TestimonialCard = ({
     <HStack spacing={3} mt={[4, null, 5, 6]}>
       <OptimizedImage
         src={img}
-        boxSize={[14, null, 16]}
+        w={[14, null, 16]}
+        h={[14, null, 16]}
         borderRadius={"full"}
         alt={name}
       />

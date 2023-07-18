@@ -44,37 +44,44 @@ function HomeHero() {
   const slides = [
     {
       img: slide1.src,
+      blurData: slide1.blurDataURL,
       label: "Production of Intricate Industrial Parts",
       description: "Nulla vitae elit libero, a pharetra augue mollis interdum.",
     },
     {
       img: slide2.src,
+      blurData: slide2.blurDataURL,
       label: "Precision Engineering",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
       img: slide3.src,
+      blurData: slide3.blurDataURL,
       label: "Fabrication",
       description:
         "Praesent commodo cursus magna, vel scelerisque nisl consectetur.",
     },
     {
       img: slide4.src,
+      blurData: slide4.blurDataURL,
       label: "SIS Welding",
       description: "Nulla vitae elit libero, a pharetra augue mollis interdum.",
     },
     {
       img: slide5.src,
+      blurData: slide5.blurDataURL,
       label: "Line Improvements",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
       img: slide6.src,
+      blurData: slide6.blurDataURL,
       label: "Industrial spare parts",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
       img: slide7.src,
+      blurData: slide7.blurDataURL,
       label: "Training and Consultancy",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
@@ -133,9 +140,11 @@ function HomeHero() {
               <OptimizedImage
                 src={slide.img}
                 alt="carousel image"
-                boxSize="full"
-                objectFit="cover"
+                h={{ base: "28rem", md: "30rem", lg: "35rem", xl: "37.5rem" }}
+                w="full"
+                objectFit={"cover"}
                 borderRadius={12}
+                blurDataURL={slide.blurData}
               />
               <Box
                 bg={{
