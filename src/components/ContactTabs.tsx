@@ -12,6 +12,8 @@ import {
   Button,
   Box,
 } from "@chakra-ui/react";
+import Link from "next/link";
+import routes from "./routes";
 
 function ContactTabs({
   isControlled,
@@ -150,11 +152,15 @@ function ContactTabs({
             </Grid>
           </TabPanel>
         ))}
-        <Box textAlign={"center"}>
-          <Button variant={"outline"} size={"lg"}>
-            Contact us
-          </Button>
-        </Box>
+        {!isControlled && (
+          <Box textAlign={"center"}>
+            <Link href={routes.contactus}>
+              <Button variant={"outline"} size={"lg"}>
+                Contact us
+              </Button>
+            </Link>
+          </Box>
+        )}
       </TabPanels>
     </Tabs>
   );

@@ -1,5 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
+import React, { FormEvent, useEffect, useState } from "react";
+import {
+  Box,
+  Button,
+  Flex,
+  Input,
+  Select,
+  SimpleGrid,
+  Text,
+  Textarea,
+} from "@chakra-ui/react";
 import OptimizedImage from "@/components/OptimizedImage";
 import PageSection from "@/components/PageSection";
 import HeroImg from "@/assets/contact-illustration.png";
@@ -8,6 +17,17 @@ import ContactTabs from "@/components/ContactTabs";
 function Contactus() {
   const [currentMapSrc, setCurrentMapSrc] = useState("");
   const [tabIndex, setTabIndex] = useState(0);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [industry, setIndustry] = useState("");
+  const [country, setCountry] = useState("");
+  const [city, setCity] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+  };
 
   useEffect(() => {
     switch (tabIndex) {
@@ -86,6 +106,82 @@ function Contactus() {
           <ContactTabs isControlled={true} setTabIndex={setTabIndex} />
         </Box>
       </Box>
+      <PageSection>
+        <Text as={"h2"} textAlign={"center"} mb={[2, null, 3]}>
+          SEND US A MESSAGE
+        </Text>
+        <Text textAlign={"center"} fontSize={16}>
+          Have any question or feedback, feel free to reach out to us. We are
+          always available to help.
+        </Text>
+
+        <Box
+          as={"form"}
+          maxW={"42.5rem"}
+          mx={"auto"}
+          textAlign={"center"}
+          mt={[8, null, 10, 12]}
+          onSubmit={handleSubmit}
+        >
+          <SimpleGrid columns={{ md: 2 }} gap={[5, null, 6, 8]}>
+            <Input
+              name={"name"}
+              type={"text"}
+              placeholder="Enter your full name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+            <Input
+              name={"email"}
+              type={"email"}
+              placeholder="Enter your email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <Input
+              name={"phone"}
+              type={"tel"}
+              placeholder="Enter your phone number"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              required
+            />
+            <Select
+              name={"industry"}
+              placeholder="Select your industry"
+              value={industry}
+              required
+            />
+            <Select
+              name={"country"}
+              placeholder="Select your country"
+              value={country}
+              required
+            />
+            <Input
+              name={"city"}
+              type={"text"}
+              placeholder="Enter your city"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              required
+            />
+          </SimpleGrid>
+          <Textarea
+            name={message}
+            placeholder={"Write your message here"}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+            mt={[5, null, 6, 8]}
+          />
+          <Button mt={6} size={"lg"} px={24} type={"submit"}>
+            Submit
+          </Button>
+        </Box>
+      </PageSection>
     </>
   );
 }
