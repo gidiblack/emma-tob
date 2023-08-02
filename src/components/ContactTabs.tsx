@@ -13,7 +13,13 @@ import {
   Box,
 } from "@chakra-ui/react";
 
-function ContactTabs() {
+function ContactTabs({
+  isControlled,
+  setTabIndex,
+}: {
+  isControlled?: boolean;
+  setTabIndex?: (i: number) => void;
+}) {
   const addresses = [
     {
       country: "Nigeria",
@@ -38,12 +44,18 @@ function ContactTabs() {
     },
     {
       country: "Switzerland",
-      address: "Wolfackerstrassa 6",
+      address: "Wolfackerstrasse 6",
       address2: "4622 Egerkingen, Switzerland",
       email: "admin@emma-tob.com, info@emma-tob.com",
       phone: "+41 763 838 336",
     },
   ];
+
+  const handleTabChange = (i: number) => {
+    if (setTabIndex !== undefined) {
+      setTabIndex(i);
+    }
+  };
   return (
     <Tabs
       bg={"brand.500"}
@@ -52,6 +64,7 @@ function ContactTabs() {
       pb={8}
       mx={["-1rem", "-1.5rem", "unset"]}
       variant={"unstyled"}
+      onChange={isControlled ? (i) => handleTabChange(i) : undefined}
     >
       <TabList
         justifyContent={"center"}
