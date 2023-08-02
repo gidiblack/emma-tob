@@ -10,11 +10,11 @@ function Layout({ children }: { children: ReactNode }) {
       <Box
         as={"main"}
         minH={{
-          base: "calc(100vh - 4.5rem)",
-          md: "calc(100vh - 5rem)",
-          lg: "calc(100vh - 5.75rem)",
+          base: "calc(100vh - 3.5rem)",
+          md: "calc(100vh - 4rem)",
+          lg: "calc(100vh - 4.75rem)",
         }}
-        mt={{ base: "4.5rem", md: "5rem", lg: "5.75rem" }}
+        mt={{ base: "3.5rem", md: "4rem", lg: "4.75rem" }}
       >
         {children}
       </Box>

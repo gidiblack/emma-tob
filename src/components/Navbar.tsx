@@ -71,13 +71,13 @@ export default function Navbar() {
       right={0}
       zIndex={"sticky"}
     >
-      <Flex py={4} align={"center"} justify={"space-between"}>
+      <Flex py={2} align={"center"} justify={"space-between"}>
         <Link as={NextLink} href={"/"}>
           <OptimizedImage
             src={Logo.src}
             alt={"emma-tob logo"}
-            w={{ base: "7.5rem", md: "8rem", lg: "10rem" }}
-            h={{ base: "2.5rem", md: "3rem", lg: "3.5rem" }}
+            w={{ base: "7rem", md: "8rem", lg: "10rem" }}
+            h={{ base: "2.25rem", md: "3rem" }}
           />
         </Link>
         <HStack as={"nav"} spacing={6} display={{ base: "none", lg: "flex" }}>
