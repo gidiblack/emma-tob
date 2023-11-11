@@ -62,7 +62,7 @@ function Products() {
     <Box position={"relative"}>
       <Box
         position={"absolute"}
-        top={["3rem", null, "4rem", "5rem"]}
+        top={["4rem", null, null, "5rem"]}
         left={"0"}
         w={"full"}
         zIndex={"banner"}
