@@ -73,16 +73,16 @@ export default function Home() {
 
   const clients = [
     {
+      name: "Nestle",
+      img: Nestle,
+    },
+    {
       name: "Unilever logo",
       img: Unilever,
     },
     {
       name: "Twinings logo",
       img: Twinings,
-    },
-    {
-      name: "Nestle",
-      img: Nestle,
     },
     {
       name: "Gsk",

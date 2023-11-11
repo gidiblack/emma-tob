@@ -18,6 +18,10 @@ export const global = {
     fontFamily: "Lato",
     letterSpacing: "1px",
   },
+  h3: {
+    fontFamily: "Lato",
+    letterSpacing: "1px",
+  },
   p: {
     fontSize: "0.875rem",
   },
