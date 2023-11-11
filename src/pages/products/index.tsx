@@ -18,49 +18,41 @@ const productsList = [
   {
     title: "Star Wheels, Rubber Rollers, Polycabonate",
     description: "A brief description of the product and its benefits",
-    link: "",
     image: Wheels.src,
   },
   {
     title: "Punches, Dies and Precision Rollers",
     description: "A brief description of the product and its benefits",
-    link: "",
     image: Punches.src,
   },
   {
     title: "Industrial knives, Slitters, Guillotine knives, Perforated knives",
     description: "A brief description of the product and its benefits",
-    link: "",
     image: Knives.src,
   },
   {
     title: "Die cast, Alloyed aluminum, arm of different shapes",
     description: "A brief description of the product and its benefits",
-    link: "",
     image: DieCast.src,
   },
   {
     title: "Gears: Spur gear, Helical gear & different Sprockets",
     description: "A brief description of the product and its benefits",
-    link: "",
     image: Gears.src,
   },
   {
     title: "Metalic cabinets, Shelves, Workbenches, Racks & footings",
     description: "A brief description of the product and its benefits",
-    link: "",
     image: ToolCabinet.src,
   },
   {
     title: "Cast iron of different shapes and sizes",
     description: "A brief description of the product and its benefits",
-    link: "",
     image: CastIron.src,
   },
   {
     title: "Intricate parts",
     description: "A brief description of the product and its benefits",
-    link: "",
     image: IntricateParts.src,
   },
 ];
@@ -143,7 +135,7 @@ function Products() {
                   </Text>
                   <Link
                     as={NextLink}
-                    href={routes.contactus}
+                    href={`${routes.contactus}#message`}
                     color={"brand.500"}
                     fontStyle={"italic"}
                     fontWeight={"medium"}

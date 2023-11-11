@@ -106,7 +106,7 @@ function Contactus() {
           <ContactTabs isControlled={true} setTabIndex={setTabIndex} />
         </Box>
       </Box>
-      <PageSection>
+      <PageSection id={"message"}>
         <Text as={"h2"} textAlign={"center"} mb={[2, null, 3]}>
           SEND US A MESSAGE
         </Text>
