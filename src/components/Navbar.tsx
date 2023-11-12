@@ -35,7 +35,15 @@ const Links = [
   },
 ];
 
-const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
+const NavLink = ({
+  children,
+  href,
+  onClick,
+}: {
+  children: ReactNode;
+  href: string;
+  onClick?: () => void;
+}) => (
   <Link
     as={NextLink}
     p={2.5}
@@ -49,6 +57,7 @@ const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
       color: "brand.300",
     }}
     href={href}
+    onClick={onClick}
   >
     {children}
   </Link>
@@ -101,7 +110,7 @@ export default function Navbar() {
         <Box pb={4} display={{ lg: "none" }} transition={"all ease .25s"}>
           <Stack as={"nav"} spacing={3} textAlign={"center"}>
             {Links.map(({ label, href }, index) => (
-              <NavLink key={index} href={href}>
+              <NavLink key={index} href={href} onClick={onClose}>
                 {label}
               </NavLink>
             ))}
