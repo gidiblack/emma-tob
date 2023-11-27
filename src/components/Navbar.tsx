@@ -18,6 +18,10 @@ import routes from "./routes";
 
 const Links = [
   {
+    label: "Home",
+    href: routes.home,
+  },
+  {
     label: "Services",
     href: routes.services,
   },

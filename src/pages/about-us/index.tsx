@@ -1,11 +1,40 @@
 import React from "react";
 import PageSection from "@/components/PageSection";
-import { Box, Flex, SimpleGrid, Text, Grid, GridItem } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  SimpleGrid,
+  Text,
+  Grid,
+  GridItem,
+  Divider,
+} from "@chakra-ui/react";
 import OptimizedImage from "@/components/OptimizedImage";
 import HeroImg from "@/assets/wheels-in-cog.png";
 import ManWelding from "@/assets/man-welding.png";
 import useWindowDimension from "@/helpers/useWindowDimension";
 import ContactTabs from "@/components/ContactTabs";
+import Integrity from "@/assets/integrity.svg";
+import Professionalism from "@/assets/professionalism.svg";
+import Promptness from "@/assets/promptness.svg";
+
+const coreValues = [
+  {
+    title: "Integrity",
+    Img: Integrity,
+    desc: "Our ethos is to provide the correct cable for the individual application, refusing to lower our standards below that required by our customers",
+  },
+  {
+    title: "Professionalism",
+    Img: Professionalism,
+    desc: "Our ethos is to provide the correct cable for the individual application, refusing to lower our standards below that required by our customers",
+  },
+  {
+    title: "Promptness",
+    Img: Promptness,
+    desc: "Our ethos is to provide the correct cable for the individual application, refusing to lower our standards below that required by our customers",
+  },
+];
 
 function AboutUs() {
   const { width } = useWindowDimension();
@@ -103,6 +132,80 @@ function AboutUs() {
           />
         </GridItem>
       </Grid>
+      <PageSection>
+        <Text as={"h2"} textAlign={["center", null, "left"]}>
+          VISION STATEMENT
+        </Text>
+        <Divider mb={8} borderWidth={1} borderColor={"brand.500"} />
+        <Text color={"dark.500"} fontSize={[20, null, 22, 24]}>
+          Our vision is to become your first point of contact and one-stop
+          solution provider for top quality toolings, machinery, industrial
+          spare parts, and services across Africa and Globally. To emerge as a
+          leading provider for precision engineering and fabrications in Africa
+          and Globally.
+        </Text>
+        <Text as={"h2"} textAlign={["center", null, "right"]} mt={"7.5rem"}>
+          MISSION STATEMENT
+        </Text>
+        <Divider mb={8} borderWidth={1} borderColor={"brand.500"} />
+        <Text color={"dark.500"} fontSize={[20, null, 22, 24]}>
+          To satisfy our clients always by providing reliable and excellent
+          services while being abreast of current innovations and be up-to-date
+          in this fast growing IT environment.
+        </Text>
+      </PageSection>
+      <PageSection>
+        <Text as={"h2"} textAlign={"center"} mb={8}>
+          WHAT MAKES US UNIQUE
+        </Text>
+        <Grid
+          templateColumns={{
+            base: "repeat(4, 1fr)",
+            md: "repeat(8, 1fr)",
+            lg: "repeat(12, 1fr)",
+          }}
+          gap={[8, null, 5, 6, null, 8]}
+        >
+          {coreValues.map(({ title, Img, desc }, i) => (
+            <GridItem
+              colSpan={4}
+              display={"flex"}
+              borderRadius={8}
+              borderWidth={2}
+              borderColor={"brand.500"}
+              alignItems={"center"}
+              flexDirection={"column"}
+              textAlign={"center"}
+              p={[5, null, 6, 8]}
+              key={i}
+            >
+              <OptimizedImage
+                src={Img}
+                alt={`core values - ${title}`}
+                w={["4rem", null, "5rem"]}
+                h={["4rem", null, "5rem"]}
+              />
+              <Text
+                as={"h3"}
+                color={"dark.500"}
+                fontWeight={"semibold"}
+                fontSize={[22, null, 24]}
+                mt={8}
+                mb={6}
+              >
+                {title}
+              </Text>
+              <Text
+                fontSize={[15, null, 16, 18]}
+                color={"gray.800"}
+                lineHeight={"22px"}
+              >
+                {desc}
+              </Text>
+            </GridItem>
+          ))}
+        </Grid>
+      </PageSection>
       <PageSection>
         <Text as={"h2"} textAlign={"center"} mb={8}>
           GET IN TOUCH
