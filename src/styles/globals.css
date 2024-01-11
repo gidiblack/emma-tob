@@ -19,6 +19,38 @@ a {
   text-decoration: none;
 }
 
+.hero-slider .slick-next {
+  right: 1rem;
+}
+
+.hero-slider .slick-prev {
+  left: 0.5rem;
+  z-index: 20;
+}
+
+.hero-slider .slick-next:before,
+.hero-slider .slick-prev:before {
+  font-size: 1.75rem;
+}
+
+.hero-slider .slick-dots {
+  bottom: -2.25rem;
+}
+
+.hero-slider .slick-dots li.slick-active button:before {
+  opacity: 1;
+  background-color: #09257b;
+}
+
+.hero-slider .slick-dots li button:before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-radius: 12px;
+  background-color: #ced2d6;
+  opacity: 0.75;
+}
+
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
