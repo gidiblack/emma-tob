@@ -4,12 +4,12 @@ import PageSection from "@/components/PageSection";
 import HeroImg from "@/assets/services-bg.png";
 import { Box, Text, Flex, Stack, Link, GridItem, Grid } from "@chakra-ui/react";
 import precision from "@/assets/metallic-factory-machine.jpg";
-import fabrication from "@/assets/different-car-accessories-arrangement.jpg";
-import welding from "@/assets/closeup-metal-cog-gears.jpg";
+import fabrication from "@/assets/shredding-machine.png";
+import welding from "@/assets/man-welding-hero.jpg";
 import tools from "@/assets/mechanic-selecting-work-tool-from-toolbox.jpg";
 import line from "@/assets/architectural-blueprints.jpg";
 import spareParts from "@/assets/spare-parts-car.jpg";
-import training from "@/assets/male-apprentice-engineer-working-on.jpg";
+import training from "@/assets/trainee-ogunlade-and-sons.jpg";
 import NextLink from "next/link";
 import routes from "@/components/routes";
 
@@ -17,13 +17,13 @@ const productsList = [
   {
     title: "Precision Engineering",
     description:
-      "Production of intricate machine spare parts with high level of precision. These spare parts include punches, dies, gears, shafts, bushings, etc",
+      "Production of intricate machine spare parts with high level of precision. These spare parts include punches, dies, gears, shafts, Cams etc",
     image: precision.src,
   },
   {
     title: "Fabrication",
     description:
-      "This is one of our fabrication projects constructed for one of the multinationals companies. Our fabrication- jobs also cover iron and steel structures for companies and individuals.",
+      "Our fabrication jobs also cover iron and steel structures for both companies and individuals. Others include Automatic dosing machine, Screw conveyors, gang tray, Modular Conveyors, Belt Conveyors, Roller Conveyors, Shredding machine",
     image: fabrication.src,
   },
   {
@@ -35,19 +35,19 @@ const productsList = [
   {
     title: "Tools and Machinery",
     description:
-      "Importation/procurement and installation; servicing and overhauling of industrial machine, hardware, equipment and sales of tools.",
+      "Importation/procurement and installation; servicing and overhauling of industrial machines, hardware, equipment and sales of engineering tools and equipment.",
     image: tools.src,
   },
   {
     title: "Line Improvements",
     description:
-      "Design and production of line improvement items to aid productivity of a manufacturing company. These items include weighing scale hanger, mobile laminate hanger.",
+      "Design and implementation of high-performing technology that enhance production line equipment and improves efficiency and productivity. These include fabricated equipment like weighing scale hanger, mobile laminate hanger, cleaning tool hangers, AZO cage, Big Bag Storage Stand.",
     image: line.src,
   },
   {
     title: "Industrial spare parts",
     description:
-      "Design, production & supply of industrial knives e.g slitters, guillotine & perforated knives. We also produce gears and sprockets.",
+      "Design, production & supply of industrial knives e.g slitters, guillotine & perforated knives, ceramic knives. We also produce gears, sprockets, turret (star wheel), Castrol wheel.",
     image: spareParts.src,
   },
   {
@@ -73,7 +73,7 @@ function Services() {
             SERVICES
           </Text>
           <Text fontSize={[18, null, 20, 21, 22]}>
-            We fabricate metals, spare parts for machines
+            We fabricate metals, spare parts and installations of machines
           </Text>
         </Box>
       </Box>

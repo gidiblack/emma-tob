@@ -22,17 +22,17 @@ const coreValues = [
   {
     title: "Integrity",
     Img: Integrity,
-    desc: "Our ethos is to provide the correct cable for the individual application, refusing to lower our standards below that required by our customers",
+    desc: "Our integrity has earned us a reputation of reliability and continuous service to quite a number of multi-national companies and indigenous ones.",
   },
   {
     title: "Professionalism",
     Img: Professionalism,
-    desc: "Our ethos is to provide the correct cable for the individual application, refusing to lower our standards below that required by our customers",
+    desc: "No business survives on poor time management. One of our obligations to our various clients is not only to deliver the best quality service but also to do so promptly.",
   },
   {
     title: "Promptness",
     Img: Promptness,
-    desc: "Our ethos is to provide the correct cable for the individual application, refusing to lower our standards below that required by our customers",
+    desc: "We stay abreast of the latest innovations, trends, and best practices in technology.",
   },
 ];
 
@@ -149,9 +149,9 @@ function AboutUs() {
         </Text>
         <Divider mb={8} borderWidth={1} borderColor={"brand.500"} />
         <Text color={"dark.500"} fontSize={[20, null, 22, 24]}>
-          To satisfy our clients always by providing reliable and excellent
-          services while being abreast of current innovations and be up-to-date
-          in this fast growing IT environment.
+          To satisfy our clients always through our passion for precision and
+          sustainability, by providing reliable and excellent services while
+          being abreast of current innovations in the market.
         </Text>
       </PageSection>
       <PageSection>

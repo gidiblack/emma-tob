@@ -5,10 +5,10 @@ import NextLink from "next/link";
 import slide1 from "@/assets/ball-bearings-bg.png";
 import slide2 from "@/assets/metallic-factory-machine.jpg";
 import slide3 from "@/assets/different-car-accessories-arrangement.jpg";
-import slide4 from "@/assets/closeup-metal-cog-gears.jpg";
+import slide4 from "@/assets/man-welding-hero.jpg";
 import slide5 from "@/assets/architectural-blueprints.jpg";
 import slide6 from "@/assets/spare-parts-car.jpg";
-import slide7 from "@/assets/male-apprentice-engineer-working-on.jpg";
+import slide7 from "@/assets/trainee-ogunlade-and-sons.jpg";
 import OptimizedImage from "./OptimizedImage";
 import Slider from "react-slick";
 
@@ -35,7 +35,6 @@ function HomeHero() {
       img: slide2.src,
       blurData: slide2.blurDataURL,
       label: "Precision Engineering",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
       img: slide3.src,
@@ -48,25 +47,21 @@ function HomeHero() {
       img: slide4.src,
       blurData: slide4.blurDataURL,
       label: "SIS Welding",
-      description: "Nulla vitae elit libero, a pharetra augue mollis interdum.",
     },
     {
       img: slide5.src,
       blurData: slide5.blurDataURL,
       label: "Line Improvements",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
       img: slide6.src,
       blurData: slide6.blurDataURL,
       label: "Industrial spare parts",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
       img: slide7.src,
       blurData: slide7.blurDataURL,
       label: "Training and Consultancy",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
   ];
 
@@ -79,7 +74,7 @@ function HomeHero() {
       py={{ base: "2rem", md: "2.875rem", lg: "3.5rem" }}
       pos={"relative"}
     >
-      <Text as={"h1"} mb={1} fontWeight={"extrabold"}>
+      <Text as={"h1"} fontWeight={"extrabold"}>
         EMMA-TOB Technologies Ltd.
       </Text>
       <Text
@@ -110,7 +105,6 @@ const HeroCard = ({
     img: string;
     blurData: string | undefined;
     label: string;
-    description: string;
   };
 }) => (
   <Box boxSize="full" shadow="md" flex="none" position={"relative"}>
