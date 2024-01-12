@@ -75,6 +75,8 @@ function Footer() {
         }}
         gap={{ base: 8, md: 8, lg: 10 }}
         fontFamily={"Lato"}
+        maxW={"100rem"}
+        mx={"auto"}
       >
         <GridItem colSpan={{ base: 2, md: 4, lg: 6 }}>
           <Stack spacing={6}>

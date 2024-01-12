@@ -70,7 +70,7 @@ function HomeHero() {
       as={"section"}
       textAlign={"center"}
       bg={"linear-gradient(180deg, #DDE3F0 0%, rgba(193, 211, 255, 0.38) 100%)"}
-      px={"1rem"}
+      px={{ base: "1rem", "2xl": "1.5rem", "3xl": "5rem" }}
       py={{ base: "2rem", md: "2.875rem", lg: "3.5rem" }}
       pos={"relative"}
     >
@@ -111,7 +111,14 @@ const HeroCard = ({
     <OptimizedImage
       src={slide.img}
       alt="carousel image"
-      h={{ base: "28rem", md: "30rem", lg: "35rem", xl: "37.5rem" }}
+      h={{
+        base: "28rem",
+        md: "30rem",
+        lg: "35rem",
+        xl: "37.5rem",
+        "2xl": "38.5rem",
+        "3xl": "45rem",
+      }}
       w="full"
       objectFit={"cover"}
       borderRadius={12}

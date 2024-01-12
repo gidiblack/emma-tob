@@ -84,7 +84,13 @@ export default function Navbar() {
       right={0}
       zIndex={"modal"}
     >
-      <Flex py={2} align={"center"} justify={"space-between"}>
+      <Flex
+        py={2}
+        align={"center"}
+        justify={"space-between"}
+        maxW={"100rem"}
+        mx={"auto"}
+      >
         <Link as={NextLink} href={"/"}>
           <OptimizedImage
             src={Logo.src}
