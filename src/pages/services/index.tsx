@@ -4,7 +4,7 @@ import PageSection from "@/components/PageSection";
 import HeroImg from "@/assets/services-bg.png";
 import { Box, Text, Flex, Stack, Link, GridItem, Grid } from "@chakra-ui/react";
 import precision from "@/assets/metallic-factory-machine.jpg";
-import fabrication from "@/assets/shredding-machine.png";
+import fabrication from "@/assets/shredding_machine.png";
 import welding from "@/assets/man-welding-hero.jpg";
 import tools from "@/assets/mechanic-selecting-work-tool-from-toolbox.jpg";
 import line from "@/assets/architectural-blueprints.jpg";
