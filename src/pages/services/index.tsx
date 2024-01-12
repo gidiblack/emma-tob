@@ -54,7 +54,10 @@ const productsList = [
     title: "Training and Consultancy",
     description:
       "We offer various types of Training Programmes for various groups - SIWES, NYSC, Industrial staff, apprenticeship, corporate, off-site, and on-site Training along our business areas.",
+    line2:
+      "Develop your career skills with the right training for professionals. Stay ahead. We offer high-quality professional courses from basic to advanced levels.",
     image: training.src,
+    href: "enroll now",
   },
 ];
 
@@ -88,7 +91,7 @@ function Services() {
       />
       <PageSection>
         <Stack spacing={[16, null, 20, 24, 28]}>
-          {productsList.map(({ title, image, description }, i) => (
+          {productsList.map(({ title, image, description, href, line2 }, i) => (
             <Grid
               templateColumns={{
                 base: "repeat(3, 1fr)",
@@ -136,9 +139,23 @@ function Services() {
                     >
                       {title}{" "}
                     </Text>
-                    <Text fontSize={[14, null, 15, 16, 18]} color={"dark.600"}>
-                      {description}
-                    </Text>
+                    <Box>
+                      <Text
+                        fontSize={[14, null, 15, 16, 18]}
+                        color={"dark.600"}
+                      >
+                        {description}
+                      </Text>
+                      {line2 && (
+                        <Text
+                          fontSize={[14, null, 15, 16, 18]}
+                          color={"dark.600"}
+                          mt={[2, null, 3]}
+                        >
+                          {line2}
+                        </Text>
+                      )}
+                    </Box>
                     <Link
                       as={NextLink}
                       href={`${routes.contactus}#message`}
@@ -151,7 +168,7 @@ function Services() {
                         color: "brand.300",
                       }}
                     >
-                      Get a quote
+                      {href ? "Enroll now" : "Get a quote"}
                     </Link>
                   </Stack>
                 </Flex>
