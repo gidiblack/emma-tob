@@ -124,7 +124,7 @@ function Footer() {
         </GridItem>
       </Grid>
       <Text mt={16} fontSize={16} fontFamily={"body"} textAlign={"center"}>
-        © 2023 Emma-tob technologies limited
+        © {new Date().getFullYear()} Emma-tob technologies limited
       </Text>
     </Box>
   );

@@ -2,62 +2,97 @@ import React from "react";
 import OptimizedImage from "@/components/OptimizedImage";
 import PageSection from "@/components/PageSection";
 import HeroImg from "@/assets/products-bg.png";
-import { Box, Text, Flex, Stack, SimpleGrid, Link } from "@chakra-ui/react";
+import { Box, Text, Stack, SimpleGrid, Link } from "@chakra-ui/react";
 import Punches from "@/assets/640-ball-bearing-stainless-metal-roller-for-machine-industrial-angular-contact-isolated-on-white-background.jpg";
-import Wheels from "@/assets/metal-preparations-are-ready-following-stage-processing.jpg";
-import Knives from "@/assets/high-angle-medical-scalpel-blades.jpg";
+import Knives from "@/assets/knives.jpg";
+import perforatingKnives from "@/assets/perofrating-knives.jpg";
 import DieCast from "@/assets/close-up-metalworking-machine.jpg";
 import Gears from "@/assets/gears-table.jpg";
 import ToolCabinet from "@/assets/view-toolbox-machines.jpg";
 import CastIron from "@/assets/cast-iron-vs-steel.webp";
-import IntricateParts from "@/assets/various-work-tools-worktop.jpg";
+import punchHead from "@/assets/punch-head(1).jpg";
+import punchHead2 from "@/assets/punch-head.jpg";
+import dies from "@/assets/dies-(1).jpg";
+import dies2 from "@/assets/dies.jpg";
+import loadWheel from "@/assets/load-wheel(1).jpg";
+import loadWheel2 from "@/assets/load-wheel.jpg";
+import castroWheel from "@/assets/castrol-wheel-static.jpg";
+import knifeBracket from "@/assets/knife-bracket.jpg";
+import heightRoller from "@/assets/height-adjuster-roller.jpg";
+import rubberWheel from "@/assets/rubber-wheel.jpg";
+import fillCam from "@/assets/fill-cam.jpg";
+import scissorKnives from "@/assets/scissors-knives.jpg";
 import NextLink from "next/link";
 import routes from "@/components/routes";
+import Slider from "react-slick";
 
 const productsList = [
   {
-    title: "Star Wheels, Rubber Rollers, Polycabonate",
-    description: "A brief description of the product and its benefits",
-    image: Wheels.src,
+    title: "Star Wheels, Rubber Rollers",
+    image: [rubberWheel.src],
   },
   {
-    title: "Punches, Dies and Precision Rollers",
-    description: "A brief description of the product and its benefits",
-    image: Punches.src,
+    title: "Precision Rollers",
+    image: [heightRoller.src],
   },
   {
-    title: "Industrial knives, Slitters, Guillotine knives, Perforated knives",
-    description: "A brief description of the product and its benefits",
-    image: Knives.src,
+    title: "Polycabonate",
+    image: [Punches.src],
+  },
+  {
+    title: "Load Wheel, Castrol Wheel",
+    image: [loadWheel.src, loadWheel2.src, castroWheel.src],
+  },
+  {
+    title: "Punches, Dies, Inlay Tablets and Tips",
+    image: [punchHead.src, punchHead2.src, dies.src, dies2.src],
+  },
+  {
+    title: "Fill Cams, Cash Cams, Wear Plate",
+    image: [fillCam.src],
+  },
+  {
+    title: "Racks",
+    image: [Punches.src],
+  },
+  {
+    title:
+      "Industrial knives, Slitters, Guillotine knives, Perforated knives, Ceramic Knives",
+    image: [Knives.src, perforatingKnives.src, scissorKnives.src],
   },
   {
     title: "Die cast, Alloyed aluminum, arm of different shapes",
-    description: "A brief description of the product and its benefits",
-    image: DieCast.src,
+    image: [DieCast.src],
   },
   {
     title: "Gears: Spur gear, Helical gear & different Sprockets",
-    description: "A brief description of the product and its benefits",
-    image: Gears.src,
+    image: [Gears.src],
   },
   {
     title: "Metalic cabinets, Shelves, Workbenches, Racks & footings",
-    description: "A brief description of the product and its benefits",
-    image: ToolCabinet.src,
+    image: [ToolCabinet.src],
   },
   {
     title: "Cast iron of different shapes and sizes",
-    description: "A brief description of the product and its benefits",
-    image: CastIron.src,
+    image: [CastIron.src],
   },
   {
-    title: "Intricate parts",
-    description: "A brief description of the product and its benefits",
-    image: IntricateParts.src,
+    title: "Intricate parts: Knive Brackets",
+    image: [knifeBracket.src],
   },
 ];
 
 function Products() {
+  const settings = {
+    dots: false,
+    infinite: true,
+    autoplay: false,
+    speed: 500,
+    autoplaySpeed: 2000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    className: "product-slider",
+  };
   return (
     <Box position={"relative"}>
       <Box
@@ -87,39 +122,38 @@ function Products() {
       />
       <PageSection>
         <Stack spacing={[10, null, 12, 16, 20]}>
-          {productsList.map(({ title, image, description }, i) => (
-            <SimpleGrid
-              gap={[8, null, 10, 12, 16]}
-              columns={[1, null, 2]}
-              key={i}
-              w={"full"}
-              maxW={"1080px"}
-              mx={"auto"}
-            >
-              <OptimizedImage
-                src={image}
-                h={{
-                  base: "16rem",
-                  md: "17.85rem",
-                  xl: "20rem",
-                  "2xl": "22.5rem",
-                }}
-                w={"full"}
-                borderRadius={"10px"}
-                objectFit="cover"
-                alt={title}
-              />
-              <Flex
-                flexDirection={"column"}
-                h={"full"}
-                justify={"center"}
-                order={{ md: i === 0 || i % 2 === 0 ? 1 : -1 }}
-              >
+          <SimpleGrid
+            gap={[10, null, 8, 12, 16]}
+            columns={[1, null, 2]}
+            w={"full"}
+            mx={"auto"}
+          >
+            {productsList.map(({ title, image }, i) => (
+              <Box key={i}>
+                <Slider {...settings}>
+                  {image.map((img, i) => (
+                    <OptimizedImage
+                      key={i}
+                      src={img}
+                      h={{
+                        base: "16rem",
+                        md: "16.5rem",
+                        lg: "17.85rem",
+                        xl: "20rem",
+                        "2xl": "24rem",
+                      }}
+                      w={"full"}
+                      borderRadius={"10px"}
+                      objectFit="cover"
+                      alt={title}
+                    />
+                  ))}
+                </Slider>
                 <Stack
-                  spacing={[3, null, 5, 6, 7, 8]}
+                  spacing={[3, null, 4, null, 5]}
+                  mt={[3, null, 4]}
                   textAlign={{
                     base: "center",
-                    md: i === 0 || i % 2 === 0 ? "left" : "right",
                   }}
                 >
                   <Text
@@ -130,9 +164,7 @@ function Products() {
                   >
                     {title}{" "}
                   </Text>
-                  <Text fontSize={[14, null, 15, 16, 18]} color={"dark.600"}>
-                    {description}
-                  </Text>
+
                   <Link
                     as={NextLink}
                     href={`${routes.contactus}#message`}
@@ -145,12 +177,12 @@ function Products() {
                       color: "brand.300",
                     }}
                   >
-                    Get a quote
+                    Place an order
                   </Link>
                 </Stack>
-              </Flex>
-            </SimpleGrid>
-          ))}
+              </Box>
+            ))}
+          </SimpleGrid>
         </Stack>
       </PageSection>
     </Box>
