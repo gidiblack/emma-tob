@@ -32,6 +32,10 @@ import MrChef from "@/assets/mrchef.png";
 import GbFoods from "@/assets/GB-FOODS.png";
 import ApFoods from "@/assets/APFoods.png";
 import Bayswater from "@/assets/bayswater.fw_.png";
+import Dangote from "@/assets/dangote-logo.webp";
+import Fastizers from "@/assets/fastizers-logo.png";
+import Aava from "@/assets/aava-brands-logo.png";
+import FrieslandCampina from "@/assets/frieslandcampina_logo.png";
 import ReckittBenckiser from "@/assets/ReckittBenckiser.fw_.png";
 import Slider from "react-slick";
 
@@ -77,11 +81,15 @@ export default function Home() {
       img: Nestle,
     },
     {
-      name: "Unilever logo",
+      name: "Dangote",
+      img: Dangote,
+    },
+    {
+      name: "Unilever",
       img: Unilever,
     },
     {
-      name: "Twinings logo",
+      name: "Twinings",
       img: Twinings,
     },
     {
@@ -93,16 +101,32 @@ export default function Home() {
       img: SweetNutrition,
     },
     {
+      name: "Fastizers",
+      img: Fastizers,
+    },
+    {
+      name: "Nestle Ghana",
+      img: NestleGhana,
+    },
+    {
       name: "Perfetti",
       img: Perfetti,
     },
     {
-      name: "Suntory logo",
+      name: "Suntory",
       img: Suntory,
     },
     {
-      name: "Mr Chef logo",
+      name: "Friesland Campina",
+      img: FrieslandCampina,
+    },
+    {
+      name: "Mr Chef",
       img: MrChef,
+    },
+    {
+      name: "Nestle Cameroun",
+      img: NestleCameroun,
     },
     {
       name: "GB Foods",
@@ -111,6 +135,10 @@ export default function Home() {
     {
       name: "AB Foods",
       img: ApFoods,
+    },
+    {
+      name: "AAVA Brands",
+      img: Aava,
     },
     {
       name: "Bayswater",
@@ -279,7 +307,7 @@ export default function Home() {
           ))}
         </Grid>
       </PageSection>
-      <PageSection>
+      <PageSection maxW={"unset"}>
         <Text as={"h2"} textAlign={"center"} mb={2}>
           CLIENTS
         </Text>
@@ -316,7 +344,7 @@ export default function Home() {
           </Slider>
         </Box>
       </PageSection>
-      <PageSection mx={["-1rem", null, "unset"]}>
+      <PageSection mx={["-1rem", null, "auto"]}>
         <Text as={"h2"} textAlign={"center"} mb={[6, null, 8, 10, 12]}>
           TESTIMONIALS
         </Text>
