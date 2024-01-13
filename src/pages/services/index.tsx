@@ -5,50 +5,59 @@ import HeroImg from "@/assets/services-bg.png";
 import { Box, Text, Flex, Stack, Link, GridItem, Grid } from "@chakra-ui/react";
 import precision from "@/assets/metallic-factory-machine.jpg";
 import fabrication from "@/assets/shredding_machine.png";
+import gate from "@/assets/mechanized-gate.jpg";
 import welding from "@/assets/man-welding-hero.jpg";
 import tools from "@/assets/mechanic-selecting-work-tool-from-toolbox.jpg";
-import line from "@/assets/architectural-blueprints.jpg";
-import spareParts from "@/assets/spare-parts-car.jpg";
+import azocage from "@/assets/azo-cage.jpg";
+import bigBag from "@/assets/big-bag-storage.jpg";
+import toolHanger from "@/assets/cleaning-tool-hanger.jpg";
+import laminateHanger from "@/assets/mobile-laminate-hanger.jpg";
+import conveyor from "@/assets/z-conveyor.jpg";
+import spareParts from "@/assets/thegarten-pusher.jpg";
+import thegarten from "@/assets/thegarten-pusher-flat.jpg";
+import knives from "@/assets/scissors-knives.jpg";
+import perforatingKnives from "@/assets/perofrating-knives.jpg";
 import training from "@/assets/trainee-ogunlade-and-sons.jpg";
 import NextLink from "next/link";
 import routes from "@/components/routes";
+import Slider from "react-slick";
 
 const productsList = [
   {
     title: "Precision Engineering",
     description:
       "Production of intricate machine spare parts with high level of precision. These spare parts include punches, dies, gears, shafts, Cams etc",
-    image: precision.src,
+    image: [precision],
   },
   {
     title: "Fabrication",
     description:
       "Our fabrication jobs also cover iron and steel structures for both companies and individuals. Others include Automatic dosing machine, Screw conveyors, gang tray, Modular Conveyors, Belt Conveyors, Roller Conveyors, Shredding machine",
-    image: fabrication.src,
+    image: [gate, fabrication, conveyor],
   },
   {
     title: "SIS Welding",
     description:
       "Welding of pipelines, arc welding and argon welding gas services.",
-    image: welding.src,
+    image: [welding],
   },
   {
     title: "Tools and Machinery",
     description:
       "Importation/procurement and installation; servicing and overhauling of industrial machines, hardware, equipment and sales of engineering tools and equipment.",
-    image: tools.src,
+    image: [tools],
   },
   {
     title: "Line Improvements",
     description:
       "Design and implementation of high-performing technology that enhance production line equipment and improves efficiency and productivity. These include fabricated equipment like weighing scale hanger, mobile laminate hanger, cleaning tool hangers, AZO cage, Big Bag Storage Stand.",
-    image: line.src,
+    image: [azocage, laminateHanger, bigBag, toolHanger],
   },
   {
     title: "Industrial spare parts",
     description:
       "Design, production & supply of industrial knives e.g slitters, guillotine & perforated knives, ceramic knives. We also produce gears, sprockets, turret (star wheel), Castrol wheel.",
-    image: spareParts.src,
+    image: [spareParts, knives, thegarten, perforatingKnives],
   },
   {
     title: "Training and Consultancy",
@@ -56,12 +65,23 @@ const productsList = [
       "We offer various types of Training Programmes for various groups - SIWES, NYSC, Industrial staff, apprenticeship, corporate, off-site, and on-site Training along our business areas.",
     line2:
       "Develop your career skills with the right training for professionals. Stay ahead. We offer high-quality professional courses from basic to advanced levels.",
-    image: training.src,
-    href: "enroll now",
+    image: [training],
+    href: "https://forms.gle/8vYXtRTAxr8oXF1v8",
   },
 ];
 
 function Services() {
+  const settings = {
+    dots: false,
+    infinite: true,
+    autoplay: false,
+    speed: 500,
+    autoplaySpeed: 2000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    className: "product-slider",
+  };
+
   return (
     <Box position={"relative"}>
       <Box
@@ -106,18 +126,24 @@ function Services() {
               key={i}
             >
               <GridItem colSpan={[3, null, 6, 7]}>
-                <OptimizedImage
-                  src={image}
-                  h={{
-                    base: "24rem",
-                    md: "28rem",
-                    xl: "34rem",
-                    "2xl": "36.5rem",
-                  }}
-                  w={"full"}
-                  objectFit="cover"
-                  alt={title}
-                />
+                <Slider {...settings}>
+                  {image.map((img, i) => (
+                    <OptimizedImage
+                      key={i}
+                      src={img.src}
+                      blurDataURL={img.blurDataURL}
+                      h={{
+                        base: "24rem",
+                        md: "28rem",
+                        xl: "34rem",
+                        "2xl": "36.5rem",
+                      }}
+                      w={"full"}
+                      objectFit="cover"
+                      alt={title}
+                    />
+                  ))}
+                </Slider>
               </GridItem>
               <GridItem
                 colSpan={[3, null, 6, 5]}
@@ -158,7 +184,9 @@ function Services() {
                     </Box>
                     <Link
                       as={NextLink}
-                      href={`${routes.contactus}#message`}
+                      href={href ? href : `${routes.contactus}#message`}
+                      target={href ? "_blank" : undefined}
+                      rel={"noreferrer"}
                       color={"brand.500"}
                       fontStyle={"italic"}
                       fontWeight={"medium"}
