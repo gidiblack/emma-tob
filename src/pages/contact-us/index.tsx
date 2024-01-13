@@ -3,16 +3,22 @@ import {
   Box,
   Button,
   Flex,
+  FormLabel,
+  HStack,
   Input,
+  InputGroup,
   Select,
   SimpleGrid,
   Text,
   Textarea,
 } from "@chakra-ui/react";
+import { AttachmentIcon, DeleteIcon } from "@chakra-ui/icons";
 import OptimizedImage from "@/components/OptimizedImage";
 import PageSection from "@/components/PageSection";
 import HeroImg from "@/assets/contact-illustration.png";
 import ContactTabs from "@/components/ContactTabs";
+import { useRouter } from "next/router";
+import { countries, industries } from "@/helpers/constants";
 
 function Contactus() {
   const [currentMapSrc, setCurrentMapSrc] = useState("");
@@ -23,10 +29,44 @@ function Contactus() {
   const [industry, setIndustry] = useState("");
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
+  const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [attachments, setAttachments] = useState<any[]>([]);
+  const { query } = useRouter();
 
   const handleSubmit = (e: FormEvent) => {
+    // e.preventDefault();
+    setName("");
+    setEmail("");
+    setPhone("");
+    setSubject("");
+    setMessage("");
+  };
+
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
+    if (e.target.files && e.target.files[0]) {
+      const selectedFiles = Array.from(e.target.files);
+      const selectedFilesPreview = selectedFiles.map((file) => {
+        return new Promise((resolve, reject) => {
+          const fileReader = new FileReader();
+          fileReader.readAsDataURL(file);
+          fileReader.onloadend = () => {
+            let attachment = {
+              url: window.URL.createObjectURL(file),
+              file: fileReader.result,
+              name: file.name,
+            };
+
+            resolve(attachment);
+          };
+        });
+      });
+
+      Promise.all(selectedFilesPreview).then((uploads) => {
+        setAttachments(attachments.concat(uploads));
+      });
+    }
   };
 
   useEffect(() => {
@@ -58,6 +98,12 @@ function Contactus() {
         break;
     }
   }, [tabIndex]);
+
+  useEffect(() => {
+    if (query.subject && typeof query.subject === "string") {
+      setSubject(query.subject);
+    }
+  }, [query]);
 
   return (
     <>
@@ -122,10 +168,14 @@ function Contactus() {
           textAlign={"center"}
           mt={[8, null, 10, 12]}
           onSubmit={handleSubmit}
+          action={
+            "https://docs.google.com/forms/d/e/1FAIpQLSe2rBMdD1Kl-IFlC6jxZqRtnAiqm55ZAxxnL2JIcAjyWGMaBw/formResponse"
+          }
+          target="_blank"
         >
           <SimpleGrid columns={{ md: 2 }} gap={[5, null, 6, 8]}>
             <Input
-              name={"name"}
+              name={"entry.2057778365"}
               type={"text"}
               placeholder="Enter your full name"
               value={name}
@@ -133,7 +183,7 @@ function Contactus() {
               required
             />
             <Input
-              name={"email"}
+              name={"entry.1170047379"}
               type={"email"}
               placeholder="Enter your email address"
               value={email}
@@ -141,7 +191,7 @@ function Contactus() {
               required
             />
             <Input
-              name={"phone"}
+              name={"entry.1336734725"}
               type={"tel"}
               placeholder="Enter your phone number"
               value={phone}
@@ -152,31 +202,93 @@ function Contactus() {
               name={"industry"}
               placeholder="Select your industry"
               value={industry}
-              required
-            />
+              onChange={(e) => setIndustry(e.target.value)}
+            >
+              {industries.map(({ name }, i) => (
+                <option key={i} value={name}>
+                  {name}
+                </option>
+              ))}
+            </Select>
             <Select
               name={"country"}
               placeholder="Select your country"
               value={country}
-              required
-            />
+              onChange={(e) => setCountry(e.target.value)}
+            >
+              {countries.map(({ name, code }, i) => (
+                <option key={i} value={name}>
+                  {name}
+                </option>
+              ))}
+            </Select>
             <Input
               name={"city"}
               type={"text"}
               placeholder="Enter your city"
               value={city}
               onChange={(e) => setCity(e.target.value)}
-              required
             />
           </SimpleGrid>
+          <Input
+            name={"entry.60409658"}
+            type={"text"}
+            placeholder="Subject of your message"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+            my={[5, null, 6, 8]}
+          />
           <Textarea
-            name={message}
+            name={"entry.1535449996"}
             placeholder={"Write your message here"}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
-            mt={[5, null, 6, 8]}
+            // mt={[5, null, 6, 8]}
           />
+          <InputGroup
+            border={"1px dashed #C6C3C3"}
+            borderRadius={12}
+            alignItems={"center"}
+            mt={[3, null, 4]}
+          >
+            <FormLabel
+              htmlFor="attach-file"
+              cursor={"pointer"}
+              py={[1, null, 2]}
+              pl={5}
+              m={0}
+              // w={"full"}
+            >
+              <HStack>
+                <AttachmentIcon boxSize={4} />
+                <Text>
+                  {attachments[0]?.name
+                    ? attachments[0]?.name
+                    : "Attach a file"}
+                </Text>
+              </HStack>
+            </FormLabel>
+            {attachments[0]?.name && (
+              <DeleteIcon
+                boxSize={4}
+                ml={"auto"}
+                mr={3}
+                color={"red.500"}
+                cursor={"pointer"}
+                onClick={() => setAttachments([])}
+              />
+            )}
+            <Input
+              type="file"
+              name={"attach-file"}
+              id={"attach-file"}
+              onChange={handleFileUpload}
+              multiple={false}
+              accept="*"
+              display={"none"}
+            />
+          </InputGroup>
           <Button mt={6} size={"lg"} px={24} type={"submit"}>
             Submit
           </Button>

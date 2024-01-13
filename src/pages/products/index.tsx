@@ -167,7 +167,7 @@ function Products() {
 
                   <Link
                     as={NextLink}
-                    href={`${routes.contactus}#message`}
+                    href={`${routes.contactus}?subject=${title} order#message`}
                     color={"brand.500"}
                     fontStyle={"italic"}
                     fontWeight={"medium"}
