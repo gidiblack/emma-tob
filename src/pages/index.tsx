@@ -12,14 +12,14 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import Punches from "@/assets/640-ball-bearing-stainless-metal-roller-for-machine-industrial-angular-contact-isolated-on-white-background.jpg";
-import Wheels from "@/assets/metal-preparations-are-ready-following-stage-processing.jpg";
-import Knives from "@/assets/high-angle-medical-scalpel-blades.jpg";
+import Punches from "@/assets/dies.jpg";
+import Wheels from "@/assets/castrol-wheel-swivel.jpg";
+import Knives from "@/assets/scissors-knives.jpg";
 import DieCast from "@/assets/close-up-metalworking-machine.jpg";
 import Gears from "@/assets/gears-table.jpg";
 import ToolCabinet from "@/assets/view-toolbox-machines.jpg";
 import CastIron from "@/assets/cast-iron-vs-steel.webp";
-import IntricateParts from "@/assets/various-work-tools-worktop.jpg";
+import IntricateParts from "@/assets/thegarten-pusher.jpg";
 import Unilever from "@/assets/unilever-logo.png";
 import Twinings from "@/assets/Twinings.png";
 import Nestle from "@/assets/nestle-logo.png";
