@@ -8,6 +8,7 @@ import {
   Grid,
   GridItem,
   HStack,
+  SimpleGrid,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -35,11 +36,15 @@ import Bayswater from "@/assets/bayswater.fw_.png";
 import Dangote from "@/assets/dangote-logo.webp";
 import Fastizers from "@/assets/fastizers-logo.png";
 import Aava from "@/assets/aava-brands-logo.png";
+import CEO from "@/assets/ogunlade-ceo.jpg";
 import FrieslandCampina from "@/assets/frieslandcampina_logo.png";
 import ReckittBenckiser from "@/assets/ReckittBenckiser.fw_.png";
 import Slider from "react-slick";
+import useWindowDimension from "@/helpers/useWindowDimension";
 
 export default function Home() {
+  const { width } = useWindowDimension();
+
   const products = [
     {
       name: "Punches, Dies and Precision Rollers",
@@ -237,28 +242,44 @@ export default function Home() {
     <>
       <HomeHero />
       <PageSection>
-        <Text
-          maxW={"64rem"}
-          mx={"auto"}
-          fontSize={[16, null, 18, 20, 22, null, 24]}
-          fontWeight={"medium"}
-          letterSpacing={1}
-          textAlign={{ base: "center", lg: "left" }}
-          fontStyle={"italic"}
-        >
-          Emma-Tob is your trusted partner for designing, fabricating and
-          supplying machines including rare and hard-to-find spare parts. With
-          our extensive experience and expertise, we help our customers
-          significantly reduce their production costs, giving them a competitive
-          edge in the market.
-        </Text>
+        <SimpleGrid columns={[1, null, 5, 3]} gap={[8, null, 4, null, 5]}>
+          <GridItem colSpan={[1, null, 3, 2]}>
+            <Flex flexDirection={"column"} justify={"center"} h={"full"}>
+              <Text
+                maxW={"64rem"}
+                mx={"auto"}
+                fontSize={[16, null, null, 20, 22, null, 24]}
+                fontWeight={"medium"}
+                letterSpacing={1}
+                textAlign={{ base: "center", md: "left" }}
+                fontStyle={"italic"}
+              >
+                Emma-Tob is your trusted partner for designing, fabricating and
+                supplying machines including rare and hard-to-find spare parts.
+                With our extensive experience and expertise, we help our
+                customers significantly reduce their production costs, giving
+                them a competitive edge in the market.
+              </Text>
+            </Flex>
+          </GridItem>
+          <GridItem colSpan={[1, null, 2, 1]} order={[-1, null, "unset"]}>
+            <OptimizedImage
+              src={CEO.src}
+              alt={"picture of emma-tob CEO"}
+              w={"full"}
+              h={{
+                base: width,
+                md: "26rem",
+                lg: "28rem",
+                xl: "34rem",
+                "2xl": "38rem",
+              }}
+              blurDataURL={CEO.blurDataURL}
+            />
+          </GridItem>
+        </SimpleGrid>
       </PageSection>
-      <PageSection>
-        <Text as={"h2"} textAlign={"center"} mb={8}>
-          GET IN TOUCH
-        </Text>
-        <ContactTabs />
-      </PageSection>
+
       <PageSection>
         <Text as={"h2"} textAlign={"center"} mb={2}>
           OUR PRODUCTS
@@ -306,6 +327,12 @@ export default function Home() {
             </GridItem>
           ))}
         </Grid>
+      </PageSection>
+      <PageSection>
+        <Text as={"h2"} textAlign={"center"} mb={8}>
+          GET IN TOUCH
+        </Text>
+        <ContactTabs />
       </PageSection>
       <PageSection maxW={"unset"}>
         <Text as={"h2"} textAlign={"center"} mb={2}>
