@@ -4,7 +4,7 @@ import routes from "./routes";
 import NextLink from "next/link";
 import slide1 from "@/assets/intricate-parts.png";
 import slide2 from "@/assets/metallic-factory-machine.jpg";
-import slide3 from "@/assets/mechanized-gate.jpg";
+import slide3 from "@/assets/mechanized-gate-old.jpg";
 import slide4 from "@/assets/man-welding-hero.jpg";
 import slide5 from "@/assets/line-improvements.png";
 import slide6 from "@/assets/spare-parts.png";
