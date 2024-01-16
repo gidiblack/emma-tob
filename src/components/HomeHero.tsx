@@ -26,15 +26,15 @@ function HomeHero() {
 
   const slides = [
     {
-      img: slide1.src,
-      blurData: slide1.blurDataURL,
-      label: "Production of Intricate Industrial Parts",
-      description: "Nulla vitae elit libero, a pharetra augue mollis interdum.",
-    },
-    {
       img: slide2.src,
       blurData: slide2.blurDataURL,
       label: "Precision Engineering",
+      description: "Nulla vitae elit libero, a pharetra augue mollis interdum.",
+    },
+    {
+      img: slide1.src,
+      blurData: slide1.blurDataURL,
+      label: "Production of Intricate Industrial Parts",
     },
     {
       img: slide3.src,
