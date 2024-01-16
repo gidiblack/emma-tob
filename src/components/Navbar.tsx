@@ -97,6 +97,7 @@ export default function Navbar() {
             alt={"emma-tob logo"}
             w={{ base: "7rem", md: "8rem", lg: "10rem" }}
             h={{ base: "2.25rem", md: "3rem" }}
+            className="contain"
           />
         </Link>
         <HStack as={"nav"} spacing={6} display={{ base: "none", lg: "flex" }}>

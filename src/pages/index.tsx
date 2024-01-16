@@ -242,8 +242,8 @@ export default function Home() {
     <>
       <HomeHero />
       <PageSection>
-        <SimpleGrid columns={[1, null, 5, 3]} gap={[8, null, 4, null, 5]}>
-          <GridItem colSpan={[1, null, 3, 2]}>
+        <SimpleGrid columns={[1, null, 5]} gap={[8, null, 4, null, 6, 10]}>
+          <GridItem colSpan={[1, null, 3]}>
             <Flex flexDirection={"column"} justify={"center"} h={"full"}>
               <Text
                 maxW={"64rem"}
@@ -262,20 +262,30 @@ export default function Home() {
               </Text>
             </Flex>
           </GridItem>
-          <GridItem colSpan={[1, null, 2, 1]} order={[-1, null, "unset"]}>
+          <GridItem colSpan={[1, null, 2]} order={[-1, null, "unset"]}>
             <OptimizedImage
               src={CEO.src}
-              alt={"picture of emma-tob CEO"}
+              alt={"emma-tob Managing Director"}
               w={"full"}
               h={{
-                base: width,
+                base: `${width && width + 32}px`,
                 md: "26rem",
-                lg: "28rem",
-                xl: "34rem",
-                "2xl": "38rem",
+                lg: "30rem",
+                xl: "37.25rem",
+                "2xl": "40rem",
               }}
               blurDataURL={CEO.blurDataURL}
+              placeholder={"blur"}
             />
+            <Text
+              color={"gray.400"}
+              fontWeight={"medium"}
+              fontSize={[12, null, null, 13]}
+              mt={1}
+              letterSpacing={"wide"}
+            >
+              Emmanuel Omolola, Managing Director
+            </Text>
           </GridItem>
         </SimpleGrid>
       </PageSection>
@@ -367,6 +377,8 @@ export default function Home() {
                   mx={"auto"}
                   alt={name}
                   blurDataURL={img.blurDataURL}
+                  placeholder={"blur"}
+                  className={"contain"}
                 />
               </div>
             ))}
