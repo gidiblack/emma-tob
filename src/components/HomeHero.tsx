@@ -120,9 +120,10 @@ const HeroCard = ({
         "3xl": "45rem",
       }}
       w="full"
-      objectFit={"cover"}
       borderRadius={12}
       blurDataURL={slide.blurData}
+      placeholder={"blur"}
+      className={"cover"}
     />
     <Box
       bg={{

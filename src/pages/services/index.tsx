@@ -107,7 +107,7 @@ function Services() {
         alt={"Emma-Tob Technologies services"}
         w={{ base: "full" }}
         h={{ base: "30rem", md: "32.5rem", lg: "37.5rem" }}
-        objectFit="cover"
+        className="cover"
       />
       <PageSection>
         <Stack spacing={[16, null, 20, 24, 28]}>
@@ -139,7 +139,7 @@ function Services() {
                         "2xl": "36.5rem",
                       }}
                       w={"full"}
-                      objectFit="cover"
+                      className="cover"
                       alt={title}
                     />
                   ))}

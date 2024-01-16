@@ -48,35 +48,35 @@ export default function Home() {
   const products = [
     {
       name: "Punches, Dies and Precision Rollers",
-      img: Punches.src,
+      img: Punches,
     },
     {
       name: "Star Wheels, Rubber Rollers, Polycabonate",
-      img: Wheels.src,
+      img: Wheels,
     },
     {
       name: "Industrial knives, Slitters, Guillotine knives, Perforated knives",
-      img: Knives.src,
+      img: Knives,
     },
     {
       name: "Die cast, Alloyed aluminum, arm of different shapes",
-      img: DieCast.src,
+      img: DieCast,
     },
     {
       name: "Gears: Spur gear, Helical gear & different Sprockets",
-      img: Gears.src,
+      img: Gears,
     },
     {
       name: "Metalic cabinets, Shelves, Workbenches, Racks & footings",
-      img: ToolCabinet.src,
+      img: ToolCabinet,
     },
     {
       name: "Cast iron of different shapes and sizes",
-      img: CastIron.src,
+      img: CastIron,
     },
     {
       name: "Intricate parts",
-      img: IntricateParts.src,
+      img: IntricateParts,
     },
   ];
 
@@ -300,7 +300,7 @@ export default function Home() {
           {products.map(({ name, img }, i) => (
             <GridItem colSpan={{ base: 3, lg: 4, xl: 3 }} key={i}>
               <OptimizedImage
-                src={img}
+                src={img.src}
                 h={{
                   base: "16rem",
                   md: "16.5rem",
@@ -310,8 +310,10 @@ export default function Home() {
                 }}
                 w={"full"}
                 borderRadius={"10px"}
-                objectFit="cover"
+                className="cover"
                 alt={name}
+                placeholder="blur"
+                blurDataURL={img.blurDataURL}
               />
               <Text
                 fontFamily={"Lato"}
@@ -426,6 +428,7 @@ const TestimonialCard = ({
         w={[14, null, 16]}
         h={[14, null, 16]}
         borderRadius={"full"}
+        className="cover"
         alt={name}
       />
       <Stack spacing={[0.5, null, null, 1]}>

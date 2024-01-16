@@ -19,6 +19,14 @@ a {
   text-decoration: none;
 }
 
+.contain {
+  object-fit: contain;
+}
+
+.cover {
+  object-fit: cover;
+}
+
 .product-slider .slick-next {
   right: 0.375rem;
 }

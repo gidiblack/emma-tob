@@ -118,7 +118,7 @@ function Products() {
         alt={"Emma-Tob Technologies products"}
         w={{ base: "full" }}
         h={{ base: "28rem", md: "32.5rem" }}
-        objectFit="cover"
+        className="cover"
       />
       <PageSection>
         <Stack spacing={[10, null, 12, 16, 20]}>
@@ -144,7 +144,7 @@ function Products() {
                       }}
                       w={"full"}
                       borderRadius={"10px"}
-                      objectFit="cover"
+                      className="cover"
                       alt={title}
                     />
                   ))}

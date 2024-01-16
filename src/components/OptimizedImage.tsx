@@ -48,14 +48,7 @@ export default function OptimizedImage({
 }: ImageProps) {
   return (
     <Box pos={"relative"} w={w} h={h} width={width} height={height}>
-      <Image
-        src={src}
-        alt={alt}
-        loading={"lazy"}
-        objectFit={"contain"}
-        fill={true}
-        {...props}
-      />
+      <Image src={src} alt={alt} loading={"lazy"} fill={true} {...props} />
     </Box>
   );
 }
