@@ -276,6 +276,7 @@ export default function Home() {
               }}
               blurDataURL={CEO.blurDataURL}
               placeholder={"blur"}
+              className="cover"
             />
             <Text
               color={"gray.400"}
