@@ -244,7 +244,12 @@ export default function Home() {
       <PageSection>
         <SimpleGrid columns={[1, null, 5]} gap={[8, null, 4, null, 6, 10]}>
           <GridItem colSpan={[1, null, 3]}>
-            <Flex flexDirection={"column"} justify={"center"} h={"full"}>
+            <Flex
+              flexDirection={"column"}
+              justify={"center"}
+              h={"full"}
+              gap={[3, null, 4, 5]}
+            >
               <Text
                 maxW={"64rem"}
                 mx={"auto"}
@@ -259,6 +264,23 @@ export default function Home() {
                 With our extensive experience and expertise, we help our
                 customers significantly reduce their production costs, giving
                 them a competitive edge in the market.
+              </Text>
+              <Text
+                maxW={"64rem"}
+                mx={"auto"}
+                fontSize={[16, null, null, 20, 22, null, 24]}
+                fontWeight={"medium"}
+                letterSpacing={1}
+                textAlign={{ base: "center", md: "left" }}
+                fontStyle={"italic"}
+              >
+                Our ethos is to diagnose our customer’s problems and thus offer
+                perfectly tailored solutions for each unique application. We
+                work with a passion for precision, refusing to lower our
+                standards below that required of our customers. With our
+                operating production offices in four countries, Emma-tob is
+                well-positioned to deliver your orders with
+                efficient lead times.
               </Text>
             </Flex>
           </GridItem>
