@@ -15,6 +15,7 @@ import Logo from "@/assets/emma-tobb-logo.png";
 import OptimizedImage from "./OptimizedImage";
 import NextLink from "next/link";
 import routes from "./routes";
+import { useRouter } from "next/router";
 
 const Links = [
   {
@@ -43,10 +44,12 @@ const NavLink = ({
   children,
   href,
   onClick,
+  isActive,
 }: {
   children: ReactNode;
   href: string;
   onClick?: () => void;
+  isActive?: boolean;
 }) => (
   <Link
     as={NextLink}
@@ -64,12 +67,13 @@ const NavLink = ({
     onClick={onClick}
   >
     {children}
+    {isActive && <Box borderTopWidth={1} borderColor={"brand.500"} w={"50%"} />}
   </Link>
 );
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const { pathname } = useRouter();
   return (
     <Box
       bg={"#FFF"}
@@ -102,7 +106,11 @@ export default function Navbar() {
         </Link>
         <HStack as={"nav"} spacing={6} display={{ base: "none", lg: "flex" }}>
           {Links.map(({ label, href }, index) => (
-            <NavLink key={index} href={href}>
+            <NavLink
+              key={index}
+              href={href}
+              isActive={pathname !== "/contact-us" && pathname === href}
+            >
               {label}
             </NavLink>
           ))}

@@ -69,7 +69,7 @@ const productsList = [
     // image: [spareParts, knives, thegarten, perforatingKnives],
     image: [
       { img: spareParts, name: "Thegarten Pusher" },
-      { img: knives, name: "Knives" },
+      { img: knives, name: "Scissor Knives" },
       { img: thegarten, name: "Thegarten Pusher" },
       { img: perforatingKnives, name: "Perforating Knives" },
     ],
