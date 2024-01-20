@@ -27,6 +27,7 @@ import IntricateParts from "@/assets/thegarten-pusher.jpg";
 import Unilever from "@/assets/unilever-logo.png";
 import Twinings from "@/assets/Twinings.png";
 import Nestle from "@/assets/nestle-logo.png";
+import Nestle2 from "@/assets/nestle-logo.jpg";
 import NestleCameroun from "@/assets/camerounnestle.png";
 import NestleGhana from "@/assets/ghananestle.png";
 import Gsk from "@/assets/gsk-logo.jpg";
@@ -198,7 +199,7 @@ export default function Home() {
       img: NestleGhana.src,
     },
     {
-      testimonial: `Ogunlade and Sons, one of our top leading vendors:
+      testimonial: `Ogunlade and Sons (Emma-Tob), one of our top leading vendors:
       
       Has supported with innovation and equipment development;
 
@@ -210,7 +211,7 @@ export default function Home() {
       `,
       name: "Saheed Kareem",
       jobTitle: "Factor Engineer, Agbara",
-      img: Nestle.src,
+      img: Nestle2.src,
     },
   ];
 
@@ -261,6 +262,7 @@ export default function Home() {
     autoplaySpeed: 0,
     slidesToShow: 2,
     slidesToScroll: 1,
+    className: "testimonial-slider",
     responsive: [
       {
         breakpoint: 992,
@@ -312,7 +314,7 @@ export default function Home() {
                 perfectly tailored solutions for each unique application. We
                 work with a passion for precision, refusing to lower our
                 standards below that required of our customers. With our
-                operating production offices in four countries, Emma-tob is
+                operating production sites in four countries, Emma-tob is
                 well-positioned to deliver your orders with
                 efficient lead times.
               </Text>

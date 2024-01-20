@@ -26,7 +26,7 @@ const productsList = [
   {
     title: "Precision Engineering",
     description:
-      "Production of intricate machine spare parts with high level of precision. These spare parts include punches, dies, gears, shafts, Cams etc",
+      "Production of intricate machine spare parts with high level of precision. These spare parts include punches, dies, gears, shafts, cams etc",
     image: [{ img: precision, name: "" }],
   },
   {
