@@ -56,9 +56,9 @@ const productsList = [
     description:
       "Design and implementation of high-performing technology that enhance production line equipment and improves efficiency and productivity. These include fabricated equipment like weighing scale hanger, mobile laminate hanger, cleaning tool hangers, AZO cage, Big Bag Storage Stand.",
     image: [
-      { img: azocage, name: "AZO Cage" },
       { img: laminateHanger, name: "Mobile Laminate Hanger" },
       { img: bigBag, name: "Big bag Storage" },
+      { img: azocage, name: "AZO Cage" },
       { img: toolHanger, name: "Cleaning tools Hanger" },
     ],
   },
@@ -151,7 +151,7 @@ function Services() {
                         h={{
                           base: "24rem",
                           md: "28rem",
-                          xl: "34rem",
+                          xl: "35rem",
                           "2xl": "36.5rem",
                         }}
                         w={"full"}

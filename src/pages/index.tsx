@@ -12,11 +12,15 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import Punches from "@/assets/dies.jpg";
 import Wheels from "@/assets/castrol-wheel-swivel.jpg";
 import Knives from "@/assets/scissors-knives.jpg";
 import DieCast from "@/assets/close-up-metalworking-machine.jpg";
 import Gears from "@/assets/gears-table.jpg";
+import heightRoller from "@/assets/height-adjuster-roller.jpg";
+import polycontainer from "@/assets/foreign-body-container(2).jpg";
+import dies from "@/assets/dies-(1).jpg";
+import fillCam from "@/assets/fill-cam.jpg";
+import rubberWheel from "@/assets/rubber-wheel.jpg";
 import ToolCabinet from "@/assets/view-toolbox-machines.jpg";
 import CastIron from "@/assets/cast-iron-vs-steel.webp";
 import IntricateParts from "@/assets/thegarten-pusher.jpg";
@@ -47,15 +51,32 @@ export default function Home() {
 
   const products = [
     {
-      name: "Punches, Dies and Precision Rollers",
-      img: Punches,
+      name: "Star Wheels, Rubber Rollers",
+      img: rubberWheel,
     },
     {
-      name: "Star Wheels, Rubber Rollers, Polycabonate",
+      name: "Precision Rollers",
+      img: heightRoller,
+    },
+    {
+      name: "Polycabonate",
+      img: polycontainer,
+    },
+    {
+      name: "Load Wheel, Castrol Wheel",
       img: Wheels,
     },
     {
-      name: "Industrial knives, Slitters, Guillotine knives, Perforated knives",
+      name: "Punches, Dies, Inlay Tablets and Tips",
+      img: dies,
+    },
+    {
+      name: "Fill Cams, Cash Cams, Wear Plate",
+      img: fillCam,
+    },
+
+    {
+      name: "Industrial knives, Slitters, Guillotine knives, Perforated knives, Ceramic Knives",
       img: Knives,
     },
     {
@@ -75,7 +96,7 @@ export default function Home() {
       img: CastIron,
     },
     {
-      name: "Intricate parts",
+      name: "Intricate parts: Knife Brackets, Thegarten Pusher",
       img: IntricateParts,
     },
   ];

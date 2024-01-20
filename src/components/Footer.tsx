@@ -59,7 +59,7 @@ const Links2 = [
     label: (
       <HStack>
         <PhoneIcon boxSize={3} color={"brand.500"} />
-        <Text fontSize={14} fontFamily={"Lato"} fontWeight={"medium"}>
+        <Text fontSize={16} fontFamily={"Lato"} fontWeight={"medium"}>
           +234-803-716-0902
         </Text>
       </HStack>
@@ -70,7 +70,7 @@ const Links2 = [
     label: (
       <HStack>
         <PhoneIcon boxSize={3} color={"brand.500"} />
-        <Text fontSize={14} fontFamily={"Lato"} fontWeight={"medium"}>
+        <Text fontSize={16} fontFamily={"Lato"} fontWeight={"medium"}>
           +234-807-777-7100
         </Text>
       </HStack>
@@ -81,7 +81,7 @@ const Links2 = [
     label: (
       <HStack>
         <EmailIcon h={5} color={"brand.500"} />
-        <Text fontSize={14} fontFamily={"Lato"} fontWeight={"medium"}>
+        <Text fontSize={16} fontFamily={"Lato"} fontWeight={"medium"}>
           admin@emma-tob.com
         </Text>
       </HStack>
@@ -144,7 +144,7 @@ function Footer() {
             ))}
           </Stack>
         </GridItem>
-        <GridItem colSpan={2}>
+        <GridItem colSpan={[2, null, null, 3]}>
           <Text
             color={"brand.500"}
             fontSize={[16, 16, 17, 18, 19, 20]}
