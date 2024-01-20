@@ -197,6 +197,21 @@ export default function Home() {
       jobTitle: "Factory Engineer, Sagamu",
       img: NestleGhana.src,
     },
+    {
+      testimonial: `Ogunlade and Sons, one of our top leading vendors:
+      
+      Has supported with innovation and equipment development;
+
+      Machine improvement and safety modification for superior performance;
+
+      Provided labor for specific engineering talent needs;
+
+      Provided turn-key solutions that promotes good manufacturing practice
+      `,
+      name: "Saheed Kareem",
+      jobTitle: "Factor Engineer, Agbara",
+      img: Nestle.src,
+    },
   ];
 
   // responsive breakpoints are "max-width"
@@ -239,7 +254,7 @@ export default function Home() {
   };
 
   const testimonialSettings = {
-    dots: false,
+    dots: true,
     infinite: true,
     autoplay: false,
     speed: 500,

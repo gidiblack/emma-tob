@@ -32,9 +32,9 @@ const productsList = [
   {
     title: "Fabrication",
     description:
-      "Our fabrication jobs also cover iron and steel structures for both companies and individuals. Others include Automatic dosing machine, Screw conveyors, gang tray, Modular Conveyors, Belt Conveyors, Roller Conveyors, Shredding machine",
+      "Our fabrication jobs cover iron and steel structures for both companies and individuals. Others include Motorized gate, Automatic dosing machine, Screw conveyors, gang tray, Modular Conveyors, Belt Conveyors, Roller Conveyors, Shredding machine",
     image: [
-      { img: gate, name: "Mechanized gate" },
+      { img: gate, name: "Motorized gate" },
       { img: fabrication, name: "Shredding machine" },
       { img: conveyor, name: "Z-Conveyor" },
     ],
@@ -54,7 +54,7 @@ const productsList = [
   {
     title: "Line Improvements",
     description:
-      "Design and implementation of high-performing technology that enhance production line equipment and improves efficiency and productivity. These include fabricated equipment like weighing scale hanger, mobile laminate hanger, cleaning tool hangers, AZO cage, Big Bag Storage Stand.",
+      "Design and implementation of high-performing technology that enhances production lines and improves efficiency and productivity. These include fabricated equipment like weighing scale hanger, mobile laminate hanger, cleaning tool hangers, AZO cage, Big Bag Storage Stand.",
     image: [
       { img: laminateHanger, name: "Mobile Laminate Hanger" },
       { img: bigBag, name: "Big bag Storage" },
@@ -65,7 +65,7 @@ const productsList = [
   {
     title: "Industrial spare parts",
     description:
-      "Design, production & supply of industrial knives e.g slitters, guillotine & perforated knives, ceramic knives. We also produce gears, sprockets, turret (star wheel), Castrol wheel.",
+      "Design, production & supply of industrial knives e.g slitters, guillotine & perforated knives, ceramic knives. We also produce gears, sprockets, turret (star wheel), castrol wheel.",
     // image: [spareParts, knives, thegarten, perforatingKnives],
     image: [
       { img: spareParts, name: "Thegarten Pusher" },
@@ -77,9 +77,9 @@ const productsList = [
   {
     title: "Training and Consultancy",
     description:
-      "We offer various types of Training Programmes for various groups - SIWES, NYSC, Industrial staff, apprenticeship, corporate, off-site, and on-site Training along our business areas.",
+      "We offer various types of Training Programmes from basic to advanced levels for various groups - SIWES, NYSC, Industrial staff, apprenticeship, corporate, off-site, and on-site Training along our business areas.",
     line2:
-      "Develop your career skills with the right training for professionals. Stay ahead. We offer high-quality professional courses from basic to advanced levels.",
+      "Emmatob Academy has a team of seasoned professionals with a wealth of extensive field and practical experience in the industry. Our training programs leverage this wealth of expertise to enhance your career development. Join us and embark on a journey to elevate your professional growth.",
     image: [{ img: training, name: "" }],
     href: "https://forms.gle/8vYXtRTAxr8oXF1v8",
   },
@@ -171,9 +171,9 @@ function Services() {
                         >
                           <Text
                             fontFamily={"Lato"}
-                            fontSize={12}
+                            fontSize={14}
                             letterSpacing={"wide"}
-                            fontWeight={"medium"}
+                            fontWeight={"bold"}
                           >
                             {name}
                           </Text>

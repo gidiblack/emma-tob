@@ -199,7 +199,7 @@ function Products() {
                             fontFamily={"Lato"}
                             fontSize={12}
                             letterSpacing={"wide"}
-                            fontWeight={"medium"}
+                            fontWeight={"bold"}
                           >
                             {product.name}
                           </Text>
