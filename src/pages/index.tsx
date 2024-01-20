@@ -278,13 +278,12 @@ export default function Home() {
                 fontWeight={"medium"}
                 letterSpacing={1}
                 textAlign={{ base: "center", md: "left" }}
-                fontStyle={"italic"}
               >
                 Emma-Tob is your trusted partner for designing, fabricating and
-                supplying machines including rare and hard-to-find spare parts.
-                With our extensive experience and expertise, we help our
-                customers significantly reduce their production costs, giving
-                them a competitive edge in the market.
+                supplying machines including rare and elusive spare parts. With
+                our extensive experience and expertise, we help our customers
+                significantly reduce their production costs, giving them a
+                competitive edge in the market.
               </Text>
               <Text
                 maxW={"64rem"}
@@ -293,7 +292,6 @@ export default function Home() {
                 fontWeight={"medium"}
                 letterSpacing={1}
                 textAlign={{ base: "center", md: "left" }}
-                fontStyle={"italic"}
               >
                 Our ethos is to diagnose our customer’s problems and thus offer
                 perfectly tailored solutions for each unique application. We
