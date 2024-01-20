@@ -337,7 +337,7 @@ export default function Home() {
           OUR PRODUCTS
         </Text>
         <Text textAlign={"center"} fontSize={20} color={"dark.500"}>
-          We fabricate metals, spare parts for machines
+          We fabricate metals and spare parts for machines
         </Text>
         <Grid
           templateColumns={{

@@ -142,7 +142,7 @@ function Products() {
             PRODUCTS
           </Text>
           <Text fontSize={[18, null, 20, 21, 22]}>
-            We fabricate metals, spare parts for machines
+            We fabricate metals and spare parts for machines
           </Text>
         </Box>
       </Box>
