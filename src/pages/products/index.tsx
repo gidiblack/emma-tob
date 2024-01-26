@@ -11,6 +11,10 @@ import ToolCabinet from "@/assets/view-toolbox-machines.jpg";
 import CastIron from "@/assets/cast-iron-vs-steel.webp";
 import punchHead from "@/assets/punch-head(1).jpg";
 import punchHead2 from "@/assets/punch-head.jpg";
+import punchTips from "@/assets/punch-tips.jpg";
+import bonalPunch from "@/assets/bonal-punch.jpg";
+import punchAssembly from "@/assets/complete-punch-assembly.jpg";
+import bellow from "@/assets/bellow.jpg";
 import dies from "@/assets/dies-(1).jpg";
 import dies2 from "@/assets/dies.jpg";
 import loadWheel from "@/assets/load-wheel(1).jpg";
@@ -34,10 +38,11 @@ import Slider from "react-slick";
 
 const productsList = [
   {
-    title: "Star Wheels, Rubber Rollers",
+    title: "Star Wheels, Rubber Rollers, Bellows",
     image: [
       { img: rubberWheel, name: "Rubber roller" },
       { img: starWheel, name: "Star wheel" },
+      { img: bellow, name: "Bellow" },
     ],
   },
   {
@@ -70,7 +75,10 @@ const productsList = [
       { img: punchHead, name: "Punch head" },
       { img: punchHead2, name: "Punch head" },
       { img: dies, name: "Dies" },
+      { img: punchTips, name: "Punch tips" },
       { img: dies2, name: "Dies" },
+      { img: bonalPunch, name: "Bonal punch" },
+      { img: punchAssembly, name: "Complete punch assembly" },
     ],
   },
   {

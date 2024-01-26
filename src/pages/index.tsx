@@ -196,7 +196,7 @@ export default function Home() {
       Action, he (Emma-Tob) acts according to norms of the environment he found himself. Communicates when he is in doubt or to take decision different from specific values.`,
       name: "Emmanuel Omokaro",
       jobTitle: "Factory Engineer, Sagamu",
-      img: NestleGhana.src,
+      img: Nestle2.src,
     },
     {
       testimonial: `Ogunlade and Sons (Emma-Tob), one of our top leading vendors:
