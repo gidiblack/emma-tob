@@ -26,46 +26,61 @@ const productsList = [
   {
     title: "Precision Engineering",
     description:
-      "Production of intricate machine spare parts with high level of precision. These spare parts include punches, dies, gears, shafts, Cams etc",
-    image: [precision],
+      "Production of intricate machine spare parts with high level of precision. These spare parts include punches, dies, gears, shafts, cams etc",
+    image: [{ img: precision, name: "" }],
   },
   {
     title: "Fabrication",
     description:
-      "Our fabrication jobs also cover iron and steel structures for both companies and individuals. Others include Automatic dosing machine, Screw conveyors, gang tray, Modular Conveyors, Belt Conveyors, Roller Conveyors, Shredding machine",
-    image: [gate, fabrication, conveyor],
+      "Our fabrication jobs cover iron and steel structures for both companies and individuals. Others include Motorized gate, Automatic dosing machine, Screw conveyors, gang tray, Modular Conveyors, Belt Conveyors, Roller Conveyors, Shredding machine",
+    image: [
+      { img: gate, name: "Motorized gate" },
+      { img: fabrication, name: "Shredding machine" },
+      { img: conveyor, name: "Z-Conveyor" },
+    ],
   },
   {
     title: "SIS Welding",
     description:
       "Welding of pipelines, arc welding and argon welding gas services.",
-    image: [welding],
+    image: [{ img: welding, name: "" }],
   },
   {
     title: "Tools and Machinery",
     description:
       "Importation/procurement and installation; servicing and overhauling of industrial machines, hardware, equipment and sales of engineering tools and equipment.",
-    image: [tools],
+    image: [{ img: tools, name: "" }],
   },
   {
     title: "Line Improvements",
     description:
-      "Design and implementation of high-performing technology that enhance production line equipment and improves efficiency and productivity. These include fabricated equipment like weighing scale hanger, mobile laminate hanger, cleaning tool hangers, AZO cage, Big Bag Storage Stand.",
-    image: [azocage, laminateHanger, bigBag, toolHanger],
+      "Design and implementation of high-performing technology that enhances production lines and improves efficiency and productivity. These include fabricated equipment like weighing scale hanger, mobile laminate hanger, cleaning tool hangers, AZO cage, Big Bag Storage Stand.",
+    image: [
+      { img: laminateHanger, name: "Mobile Laminate Hanger" },
+      { img: bigBag, name: "Big bag Storage" },
+      { img: azocage, name: "AZO Cage" },
+      { img: toolHanger, name: "Cleaning tools Hanger" },
+    ],
   },
   {
     title: "Industrial spare parts",
     description:
-      "Design, production & supply of industrial knives e.g slitters, guillotine & perforated knives, ceramic knives. We also produce gears, sprockets, turret (star wheel), Castrol wheel.",
-    image: [spareParts, knives, thegarten, perforatingKnives],
+      "Design, production & supply of industrial knives e.g slitters, guillotine & perforated knives, ceramic knives. We also produce gears, sprockets, turret (star wheel), castrol wheel.",
+    // image: [spareParts, knives, thegarten, perforatingKnives],
+    image: [
+      { img: spareParts, name: "Thegarten Pusher" },
+      { img: knives, name: "Scissor Knives" },
+      { img: thegarten, name: "Thegarten Pusher" },
+      { img: perforatingKnives, name: "Perforating Knives" },
+    ],
   },
   {
     title: "Training and Consultancy",
     description:
-      "We offer various types of Training Programmes for various groups - SIWES, NYSC, Industrial staff, apprenticeship, corporate, off-site, and on-site Training along our business areas.",
+      "We offer various types of Training Programmes from basic to advanced levels for various groups - SIWES, NYSC, Industrial staff, apprenticeship, corporate, off-site, and on-site Training along our business areas.",
     line2:
-      "Develop your career skills with the right training for professionals. Stay ahead. We offer high-quality professional courses from basic to advanced levels.",
-    image: [training],
+      "Emmatob Academy has a team of seasoned professionals with a wealth of extensive field and practical experience in the industry. Our training programs leverage this wealth of expertise to enhance your career development. Join us and embark on a journey to elevate your professional growth.",
+    image: [{ img: training, name: "" }],
     href: "https://forms.gle/8vYXtRTAxr8oXF1v8",
   },
 ];
@@ -127,21 +142,44 @@ function Services() {
             >
               <GridItem colSpan={[3, null, 6, 7]}>
                 <Slider {...settings}>
-                  {image.map((img, i) => (
-                    <OptimizedImage
-                      key={i}
-                      src={img.src}
-                      blurDataURL={img.blurDataURL}
-                      h={{
-                        base: "24rem",
-                        md: "28rem",
-                        xl: "34rem",
-                        "2xl": "36.5rem",
-                      }}
-                      w={"full"}
-                      className="cover"
-                      alt={title}
-                    />
+                  {image.map(({ img, name }, i) => (
+                    <Box key={i} position={"relative"}>
+                      <OptimizedImage
+                        src={img.src}
+                        blurDataURL={img.blurDataURL}
+                        placeholder="blur"
+                        h={{
+                          base: "24rem",
+                          md: "28rem",
+                          xl: "35rem",
+                          "2xl": "36.5rem",
+                        }}
+                        w={"full"}
+                        className="cover"
+                        alt={title}
+                      />
+                      {name !== "" && (
+                        <Box
+                          py={1.5}
+                          px={4}
+                          borderRadius={4}
+                          bgColor={"white"}
+                          position={"absolute"}
+                          bottom={3}
+                          right={3}
+                          zIndex={200}
+                        >
+                          <Text
+                            fontFamily={"Lato"}
+                            fontSize={14}
+                            letterSpacing={"wide"}
+                            fontWeight={"bold"}
+                          >
+                            {name}
+                          </Text>
+                        </Box>
+                      )}
+                    </Box>
                   ))}
                 </Slider>
               </GridItem>

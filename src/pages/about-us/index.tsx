@@ -27,12 +27,12 @@ const coreValues = [
   {
     title: "Professionalism",
     Img: Professionalism,
-    desc: "No business survives on poor time management. One of our obligations to our various clients is not only to deliver the best quality service but also to do so promptly.",
+    desc: "We stay abreast of the latest innovations, trends, and best practices in technology.",
   },
   {
     title: "Promptness",
     Img: Promptness,
-    desc: "We stay abreast of the latest innovations, trends, and best practices in technology.",
+    desc: "No business survives on poor time management. One of our obligations to our various clients is not only to deliver the best quality service but also to do so promptly.",
   },
 ];
 
@@ -71,9 +71,9 @@ function AboutUs() {
               <Text fontSize={[18, null, 20, 21, 22]}>
                 Our vision is to become your first point of contact and one-stop
                 solution provider for top quality toolings, machinery,
-                industrial spare parts, and services across Africa and Globally.
-                To emerge as a leading provider for precision engineering and
-                fabrications in Africa and Globally. 
+                industrial spare parts, and services. To emerge as a leading
+                provider for precision engineering and fabrications in Africa
+                and Globally. 
               </Text>
             </Box>
           </Flex>
@@ -113,11 +113,11 @@ function AboutUs() {
             <Text fontSize={[16, null, 18, null, 20]}>
               Since its inception, the company has consistently thrived and
               achieved remarkable growth over time. Emma-tob Technologies
-              comprises 4 production sites dedicated to meeting the needs of our
-              customers across Africa and globally. Each site is supported by an
-              efficient team of technical engineers and are readily available to
-              understand your business needs and cater to applications requiring
-              customized solutions.
+              comprises four production sites dedicated to meeting the needs of
+              our customers across Africa and globally. Each site is supported
+              by an efficient team of technical engineers and are readily
+              available to understand your business needs and cater to
+              applications requiring customized solutions.
             </Text>
           </Flex>
         </GridItem>
@@ -140,16 +140,15 @@ function AboutUs() {
         <Text color={"dark.500"} fontSize={[20, null, 22, 24]}>
           Our vision is to become your first point of contact and one-stop
           solution provider for top quality toolings, machinery, industrial
-          spare parts, and services across Africa and Globally. To emerge as a
-          leading provider for precision engineering and fabrications in Africa
-          and Globally.
+          spare parts, and services. To emerge as a leading provider for
+          precision engineering and fabrications in Africa and Globally.
         </Text>
         <Text as={"h2"} textAlign={["center", null, "right"]} mt={"7.5rem"}>
           MISSION STATEMENT
         </Text>
         <Divider mb={8} borderWidth={1} borderColor={"brand.500"} />
         <Text color={"dark.500"} fontSize={[20, null, 22, 24]}>
-          To satisfy our clients always through our passion for precision and
+          To satisfy our customers always through our passion for precision and
           sustainability, by providing reliable and excellent services while
           being abreast of current innovations in the market.
         </Text>

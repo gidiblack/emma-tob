@@ -3,8 +3,7 @@ import OptimizedImage from "@/components/OptimizedImage";
 import PageSection from "@/components/PageSection";
 import HeroImg from "@/assets/products-bg.png";
 import { Box, Text, Stack, SimpleGrid, Link } from "@chakra-ui/react";
-import Punches from "@/assets/640-ball-bearing-stainless-metal-roller-for-machine-industrial-angular-contact-isolated-on-white-background.jpg";
-import Knives from "@/assets/knives.jpg";
+import thegartenPusher from "@/assets/thegarten-pusher.jpg";
 import perforatingKnives from "@/assets/perofrating-knives.jpg";
 import DieCast from "@/assets/close-up-metalworking-machine.jpg";
 import Gears from "@/assets/gears-table.jpg";
@@ -12,6 +11,10 @@ import ToolCabinet from "@/assets/view-toolbox-machines.jpg";
 import CastIron from "@/assets/cast-iron-vs-steel.webp";
 import punchHead from "@/assets/punch-head(1).jpg";
 import punchHead2 from "@/assets/punch-head.jpg";
+import punchTips from "@/assets/punch-tips.jpg";
+import bonalPunch from "@/assets/bonal-punch.jpg";
+import punchAssembly from "@/assets/complete-punch-assembly.jpg";
+import bellow from "@/assets/bellow.jpg";
 import dies from "@/assets/dies-(1).jpg";
 import dies2 from "@/assets/dies.jpg";
 import loadWheel from "@/assets/load-wheel(1).jpg";
@@ -19,8 +22,15 @@ import loadWheel2 from "@/assets/load-wheel.jpg";
 import castroWheel from "@/assets/castrol-wheel-static.jpg";
 import knifeBracket from "@/assets/knife-bracket.jpg";
 import heightRoller from "@/assets/height-adjuster-roller.jpg";
+import heightRoller2 from "@/assets/height-ajuster-roller(2).jpg";
 import rubberWheel from "@/assets/rubber-wheel.jpg";
+import starWheel from "@/assets/turret-star-wheel.jpg";
+import polycover2 from "@/assets/polycarbonate-cover(2).jpg";
+import polycover from "@/assets/polycarbonate-cover.jpg";
+import polycontainer from "@/assets/foreign-body-container(2).jpg";
+import polycontainer2 from "@/assets/foreign-body-container.jpg";
 import fillCam from "@/assets/fill-cam.jpg";
+import cam from "@/assets/cam.jpg";
 import scissorKnives from "@/assets/scissors-knives.jpg";
 import NextLink from "next/link";
 import routes from "@/components/routes";
@@ -28,57 +38,90 @@ import Slider from "react-slick";
 
 const productsList = [
   {
-    title: "Star Wheels, Rubber Rollers",
-    image: [rubberWheel.src],
+    title: "Star Wheels, Rubber Rollers, Bellows",
+    image: [
+      { img: rubberWheel, name: "Rubber roller" },
+      { img: starWheel, name: "Star wheel" },
+      { img: bellow, name: "Bellow" },
+    ],
   },
   {
     title: "Precision Rollers",
-    image: [heightRoller.src],
+    image: [
+      { img: heightRoller, name: "Height adjuster roller" },
+      { img: heightRoller2, name: "Height adjuster roller" },
+    ],
   },
   {
-    title: "Polycabonate",
-    image: [Punches.src],
+    title: "Polycabonates",
+    image: [
+      { img: polycover, name: "Polycarbonate cover" },
+      { img: polycontainer, name: "Polycarbonate container" },
+      { img: polycover2, name: "Polycarbonate cover" },
+      { img: polycontainer2, name: "Polycarbonate container" },
+    ],
   },
   {
     title: "Load Wheel, Castrol Wheel",
-    image: [loadWheel.src, loadWheel2.src, castroWheel.src],
+    image: [
+      { img: loadWheel, name: "Load Wheel" },
+      { img: loadWheel2, name: "Load Wheel" },
+      { img: castroWheel, name: "Castro Wheel" },
+    ],
   },
   {
     title: "Punches, Dies, Inlay Tablets and Tips",
-    image: [punchHead.src, punchHead2.src, dies.src, dies2.src],
+    image: [
+      { img: punchHead, name: "Punch head" },
+      { img: punchHead2, name: "Punch head" },
+      { img: dies, name: "Dies" },
+      { img: punchTips, name: "Punch tips" },
+      { img: dies2, name: "Dies" },
+      { img: bonalPunch, name: "Bonal punch" },
+      { img: punchAssembly, name: "Complete punch assembly" },
+    ],
   },
   {
     title: "Fill Cams, Cash Cams, Wear Plate",
-    image: [fillCam.src],
+    image: [
+      { img: fillCam, name: "Fill cam" },
+      { img: cam, name: "Cam" },
+    ],
   },
-  {
-    title: "Racks",
-    image: [Punches.src],
-  },
+  // {
+  //   title: "Racks",
+  //   image: [Punches.src],
+  // },
   {
     title:
       "Industrial knives, Slitters, Guillotine knives, Perforated knives, Ceramic Knives",
-    image: [Knives.src, perforatingKnives.src, scissorKnives.src],
+    image: [
+      { img: perforatingKnives, name: "Perforating Knives" },
+      { img: scissorKnives, name: "Scissors Knives" },
+    ],
   },
   {
     title: "Die cast, Alloyed aluminum, arm of different shapes",
-    image: [DieCast.src],
+    image: [{ img: DieCast, name: "" }],
   },
   {
     title: "Gears: Spur gear, Helical gear & different Sprockets",
-    image: [Gears.src],
+    image: [{ img: Gears, name: "" }],
   },
   {
     title: "Metalic cabinets, Shelves, Workbenches, Racks & footings",
-    image: [ToolCabinet.src],
+    image: [{ img: ToolCabinet, name: "" }],
   },
   {
     title: "Cast iron of different shapes and sizes",
-    image: [CastIron.src],
+    image: [{ img: CastIron, name: "" }],
   },
   {
-    title: "Intricate parts: Knive Brackets",
-    image: [knifeBracket.src],
+    title: "Intricate parts: Knife Brackets, Thegarten Pusher",
+    image: [
+      { img: knifeBracket, name: "Knife Brackets" },
+      { img: thegartenPusher, name: "Thegarten Pusher" },
+    ],
   },
 ];
 
@@ -107,7 +150,7 @@ function Products() {
             PRODUCTS
           </Text>
           <Text fontSize={[18, null, 20, 21, 22]}>
-            We fabricate metals, spare parts for machines
+            We fabricate metals and spare parts for machines
           </Text>
         </Box>
       </Box>
@@ -131,22 +174,46 @@ function Products() {
             {productsList.map(({ title, image }, i) => (
               <Box key={i}>
                 <Slider {...settings}>
-                  {image.map((img, i) => (
-                    <OptimizedImage
-                      key={i}
-                      src={img}
-                      h={{
-                        base: "16rem",
-                        md: "16.5rem",
-                        lg: "17.85rem",
-                        xl: "20rem",
-                        "2xl": "24rem",
-                      }}
-                      w={"full"}
-                      borderRadius={"10px"}
-                      className="cover"
-                      alt={title}
-                    />
+                  {image.map((product, i) => (
+                    <Box key={i} position={"relative"}>
+                      <OptimizedImage
+                        src={product.img.src}
+                        h={{
+                          base: "16rem",
+                          md: "16.5rem",
+                          lg: "17.85rem",
+                          xl: "20rem",
+                          "2xl": "24rem",
+                        }}
+                        w={"full"}
+                        borderRadius={"10px"}
+                        className="cover"
+                        alt={title}
+                        placeholder="blur"
+                        blurDataURL={product.img.blurDataURL}
+                      />
+                      {product.name !== "" && (
+                        <Box
+                          py={1.5}
+                          px={4}
+                          borderRadius={4}
+                          bgColor={"white"}
+                          position={"absolute"}
+                          bottom={3}
+                          right={3}
+                          zIndex={200}
+                        >
+                          <Text
+                            fontFamily={"Lato"}
+                            fontSize={12}
+                            letterSpacing={"wide"}
+                            fontWeight={"bold"}
+                          >
+                            {product.name}
+                          </Text>
+                        </Box>
+                      )}
+                    </Box>
                   ))}
                 </Slider>
                 <Stack

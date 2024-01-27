@@ -12,17 +12,22 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import Punches from "@/assets/dies.jpg";
 import Wheels from "@/assets/castrol-wheel-swivel.jpg";
 import Knives from "@/assets/scissors-knives.jpg";
 import DieCast from "@/assets/close-up-metalworking-machine.jpg";
 import Gears from "@/assets/gears-table.jpg";
+import heightRoller from "@/assets/height-adjuster-roller.jpg";
+import polycontainer from "@/assets/foreign-body-container(2).jpg";
+import dies from "@/assets/dies-(1).jpg";
+import fillCam from "@/assets/fill-cam.jpg";
+import rubberWheel from "@/assets/rubber-wheel.jpg";
 import ToolCabinet from "@/assets/view-toolbox-machines.jpg";
 import CastIron from "@/assets/cast-iron-vs-steel.webp";
 import IntricateParts from "@/assets/thegarten-pusher.jpg";
 import Unilever from "@/assets/unilever-logo.png";
 import Twinings from "@/assets/Twinings.png";
 import Nestle from "@/assets/nestle-logo.png";
+import Nestle2 from "@/assets/nestle-logo.jpg";
 import NestleCameroun from "@/assets/camerounnestle.png";
 import NestleGhana from "@/assets/ghananestle.png";
 import Gsk from "@/assets/gsk-logo.jpg";
@@ -47,15 +52,32 @@ export default function Home() {
 
   const products = [
     {
-      name: "Punches, Dies and Precision Rollers",
-      img: Punches,
+      name: "Star Wheels, Rubber Rollers",
+      img: rubberWheel,
     },
     {
-      name: "Star Wheels, Rubber Rollers, Polycabonate",
+      name: "Precision Rollers",
+      img: heightRoller,
+    },
+    {
+      name: "Polycabonate",
+      img: polycontainer,
+    },
+    {
+      name: "Load Wheel, Castrol Wheel",
       img: Wheels,
     },
     {
-      name: "Industrial knives, Slitters, Guillotine knives, Perforated knives",
+      name: "Punches, Dies, Inlay Tablets and Tips",
+      img: dies,
+    },
+    {
+      name: "Fill Cams, Cash Cams, Wear Plate",
+      img: fillCam,
+    },
+
+    {
+      name: "Industrial knives, Slitters, Guillotine knives, Perforated knives, Ceramic Knives",
       img: Knives,
     },
     {
@@ -75,7 +97,7 @@ export default function Home() {
       img: CastIron,
     },
     {
-      name: "Intricate parts",
+      name: "Intricate parts: Knife Brackets, Thegarten Pusher",
       img: IntricateParts,
     },
   ];
@@ -174,7 +196,22 @@ export default function Home() {
       Action, he (Emma-Tob) acts according to norms of the environment he found himself. Communicates when he is in doubt or to take decision different from specific values.`,
       name: "Emmanuel Omokaro",
       jobTitle: "Factory Engineer, Sagamu",
-      img: NestleGhana.src,
+      img: Nestle2.src,
+    },
+    {
+      testimonial: `Ogunlade and Sons (Emma-Tob), one of our top leading vendors:
+      
+      Has supported with innovation and equipment development;
+
+      Machine improvement and safety modification for superior performance;
+
+      Provided labor for specific engineering talent needs;
+
+      Provided turn-key solutions that promotes good manufacturing practice
+      `,
+      name: "Saheed Kareem",
+      jobTitle: "Factor Engineer, Agbara",
+      img: Nestle2.src,
     },
   ];
 
@@ -218,13 +255,14 @@ export default function Home() {
   };
 
   const testimonialSettings = {
-    dots: false,
+    dots: true,
     infinite: true,
     autoplay: false,
     speed: 500,
     autoplaySpeed: 0,
     slidesToShow: 2,
     slidesToScroll: 1,
+    className: "testimonial-slider",
     responsive: [
       {
         breakpoint: 992,
@@ -244,7 +282,12 @@ export default function Home() {
       <PageSection>
         <SimpleGrid columns={[1, null, 5]} gap={[8, null, 4, null, 6, 10]}>
           <GridItem colSpan={[1, null, 3]}>
-            <Flex flexDirection={"column"} justify={"center"} h={"full"}>
+            <Flex
+              flexDirection={"column"}
+              justify={"center"}
+              h={"full"}
+              gap={[3, null, 4, 5]}
+            >
               <Text
                 maxW={"64rem"}
                 mx={"auto"}
@@ -252,13 +295,28 @@ export default function Home() {
                 fontWeight={"medium"}
                 letterSpacing={1}
                 textAlign={{ base: "center", md: "left" }}
-                fontStyle={"italic"}
               >
                 Emma-Tob is your trusted partner for designing, fabricating and
-                supplying machines including rare and hard-to-find spare parts.
-                With our extensive experience and expertise, we help our
-                customers significantly reduce their production costs, giving
-                them a competitive edge in the market.
+                supplying machines including rare and elusive spare parts. With
+                our extensive experience and expertise, we help our customers
+                significantly reduce their production costs, giving them a
+                competitive edge in the market.
+              </Text>
+              <Text
+                maxW={"64rem"}
+                mx={"auto"}
+                fontSize={[16, null, null, 20, 22, null, 24]}
+                fontWeight={"medium"}
+                letterSpacing={1}
+                textAlign={{ base: "center", md: "left" }}
+              >
+                Our ethos is to diagnose our customer’s problems and thus offer
+                perfectly tailored solutions for each unique application. We
+                work with a passion for precision, refusing to lower our
+                standards below that required of our customers. With our
+                operating production sites in four countries, Emma-tob is
+                well-positioned to deliver your orders with
+                efficient lead times.
               </Text>
             </Flex>
           </GridItem>
@@ -296,7 +354,7 @@ export default function Home() {
           OUR PRODUCTS
         </Text>
         <Text textAlign={"center"} fontSize={20} color={"dark.500"}>
-          We fabricate metals, spare parts for machines
+          We fabricate metals and spare parts for machines
         </Text>
         <Grid
           templateColumns={{

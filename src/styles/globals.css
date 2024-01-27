@@ -54,6 +54,11 @@ a {
   bottom: -2rem;
 }
 
+.testimonial-slider .slick-next:before,
+.testimonial-slider .slick-prev:before {
+  color: #09257b;
+}
+
 .hero-slider .slick-dots li.slick-active button:before {
   opacity: 1;
   background-color: #09257b;
