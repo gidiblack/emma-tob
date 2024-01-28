@@ -1,11 +1,15 @@
 export const industries = [
   {
+    name: "Agribusiness",
+    value: "Agribusiness",
+  },
+  {
     name: "Building and Construction",
     value: "Building and Construction",
   },
   {
-    name: "Bottling",
-    value: "Bottling",
+    name: "Bottling & Packaging",
+    value: "Bottling & Packaging",
   },
   {
     name: "Catering",
@@ -16,12 +20,44 @@ export const industries = [
     value: "Cleaning and Fumigation",
   },
   {
+    name: "Communications",
+    value: "Communications",
+  },
+  {
+    name: "Education",
+    value: "Education",
+  },
+  {
+    name: "Energy & Natural Resources",
+    value: "Energy & Natural Resources",
+  },
+  {
+    name: "Finance & Insurance",
+    value: "Finance & Insurance",
+  },
+  {
+    name: "Food & Beverage",
+    value: "Food & Beverage",
+  },
+  {
+    name: "Health",
+    value: "Health",
+  },
+  {
     name: "Industrial farming",
     value: "Industrial farming",
   },
   {
     name: "Iron and Aluminum Casting",
     value: "Iron and Aluminum Casting",
+  },
+  {
+    name: "Real Estate",
+    value: "Real Estate",
+  },
+  {
+    name: "Transportation",
+    value: "Transportation",
   },
 ];
 export const countries = [
