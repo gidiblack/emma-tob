@@ -28,6 +28,10 @@ export const industries = [
     value: "Education",
   },
   {
+    name: "Electronics",
+    value: "Electronics",
+  },
+  {
     name: "Energy & Natural Resources",
     value: "Energy & Natural Resources",
   },

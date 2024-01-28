@@ -1,4 +1,4 @@
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { FormEvent, useEffect, useState, useRef } from "react";
 import {
   Box,
   Button,
@@ -9,8 +9,10 @@ import {
   InputGroup,
   Select,
   SimpleGrid,
+  Stack,
   Text,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
 import { AttachmentIcon, DeleteIcon } from "@chakra-ui/icons";
 import OptimizedImage from "@/components/OptimizedImage";
@@ -19,6 +21,7 @@ import HeroImg from "@/assets/contact-illustration.png";
 import ContactTabs from "@/components/ContactTabs";
 import { useRouter } from "next/router";
 import { countries, industries } from "@/helpers/constants";
+import emailjs from "@emailjs/browser";
 
 function Contactus() {
   const [currentMapSrc, setCurrentMapSrc] = useState("");
@@ -31,16 +34,61 @@ function Contactus() {
   const [city, setCity] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const [attachments, setAttachments] = useState<any[]>([]);
   const { query } = useRouter();
+  const form = useRef(null);
+  const toast = useToast();
 
-  const handleSubmit = (e: FormEvent) => {
-    // e.preventDefault();
+  const resetForm = () => {
     setName("");
     setEmail("");
     setPhone("");
+    setCity("");
+    setCountry("");
     setSubject("");
     setMessage("");
+    setIndustry("");
+    setAttachments([]);
+  };
+
+  const removeAttachment = (file: any) => {
+    let newData = attachments.filter((attach) => attach !== file);
+    setAttachments(newData);
+  };
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    if (form.current) {
+      setLoading(true);
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+          form.current,
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
+        )
+        .then(() => {
+          toast({
+            status: "success",
+            position: "top",
+            description:
+              "Email sent successfully, a respresentative will respond within 24 hours",
+          });
+          resetForm();
+        })
+        .catch((err) => {
+          toast({
+            status: "error",
+            position: "top",
+            description: err.response.message || "an unexpected error occurred",
+          });
+        })
+        .finally(() => setLoading(false));
+    } else {
+      setLoading(false);
+    }
   };
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -168,14 +216,11 @@ function Contactus() {
           textAlign={"center"}
           mt={[8, null, 10, 12]}
           onSubmit={handleSubmit}
-          action={
-            "https://docs.google.com/forms/d/e/1FAIpQLSe2rBMdD1Kl-IFlC6jxZqRtnAiqm55ZAxxnL2JIcAjyWGMaBw/formResponse"
-          }
-          target="_blank"
+          ref={form}
         >
           <SimpleGrid columns={{ md: 2 }} gap={[5, null, 6, 8]}>
             <Input
-              name={"entry.2057778365"}
+              name={"from_name"}
               type={"text"}
               placeholder="Enter your full name"
               value={name}
@@ -183,7 +228,7 @@ function Contactus() {
               required
             />
             <Input
-              name={"entry.1170047379"}
+              name={"email"}
               type={"email"}
               placeholder="Enter your email address"
               value={email}
@@ -191,7 +236,7 @@ function Contactus() {
               required
             />
             <Input
-              name={"entry.1336734725"}
+              name={"phone_number"}
               type={"tel"}
               placeholder="Enter your phone number"
               value={phone}
@@ -231,7 +276,7 @@ function Contactus() {
             />
           </SimpleGrid>
           <Input
-            name={"entry.60409658"}
+            name={"subject"}
             type={"text"}
             placeholder="Subject of your message"
             value={subject}
@@ -239,46 +284,45 @@ function Contactus() {
             my={[5, null, 6, 8]}
           />
           <Textarea
-            name={"entry.1535449996"}
+            name={"message"}
             placeholder={"Write your message here"}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
-            // mt={[5, null, 6, 8]}
           />
           <InputGroup
             border={"1px dashed #C6C3C3"}
             borderRadius={12}
             alignItems={"center"}
             mt={[3, null, 4]}
+            py={[1, null, 2]}
+            flexDirection={"column"}
           >
             <FormLabel
               htmlFor="attach-file"
               cursor={"pointer"}
-              py={[1, null, 2]}
               pl={5}
               m={0}
-              // w={"full"}
+              w={"full"}
             >
               <HStack>
                 <AttachmentIcon boxSize={4} />
-                <Text>
-                  {attachments[0]?.name
-                    ? attachments[0]?.name
-                    : "Attach a file"}
-                </Text>
+                <Text>Attach files</Text>
               </HStack>
             </FormLabel>
-            {attachments[0]?.name && (
-              <DeleteIcon
-                boxSize={4}
-                ml={"auto"}
-                mr={3}
-                color={"red.500"}
-                cursor={"pointer"}
-                onClick={() => setAttachments([])}
-              />
-            )}
+            {attachments.map((file, i) => (
+              <Stack key={i} w={"full"} px={5} mt={1} spacing={4}>
+                <HStack justify={"space-between"}>
+                  <Text>{file.name}</Text>
+                  <DeleteIcon
+                    boxSize={4}
+                    color={"red.500"}
+                    cursor={"pointer"}
+                    onClick={() => removeAttachment(file)}
+                  />
+                </HStack>
+              </Stack>
+            ))}
             <Input
               type="file"
               name={"attach-file"}
@@ -289,7 +333,13 @@ function Contactus() {
               display={"none"}
             />
           </InputGroup>
-          <Button mt={6} size={"lg"} px={24} type={"submit"}>
+          <Button
+            mt={6}
+            size={"lg"}
+            px={24}
+            type={"submit"}
+            isLoading={loading}
+          >
             Submit
           </Button>
         </Box>
