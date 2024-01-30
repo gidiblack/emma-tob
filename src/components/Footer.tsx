@@ -82,11 +82,11 @@ const Links2 = [
       <HStack>
         <EmailIcon h={5} color={"brand.500"} />
         <Text fontSize={16} fontFamily={"Lato"} fontWeight={"medium"}>
-          emmatobonline@gmail.com
+          admin@emma-tob.com
         </Text>
       </HStack>
     ),
-    href: "mailto:emmatobonline@gmail.com",
+    href: "mailto:admin@emma-tob.com",
   },
 ];
 
