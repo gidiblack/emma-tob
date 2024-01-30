@@ -82,7 +82,8 @@ function Contactus() {
           toast({
             status: "error",
             position: "top",
-            description: err.response.message || "an unexpected error occurred",
+            description:
+              err?.response?.message || "an unexpected error occurred",
           });
         })
         .finally(() => setLoading(false));
@@ -290,7 +291,7 @@ function Contactus() {
             onChange={(e) => setMessage(e.target.value)}
             required
           />
-          <InputGroup
+          {/* <InputGroup
             border={"1px dashed #C6C3C3"}
             borderRadius={12}
             alignItems={"center"}
@@ -332,7 +333,7 @@ function Contactus() {
               accept="*"
               display={"none"}
             />
-          </InputGroup>
+          </InputGroup> */}
           <Button
             mt={6}
             size={"lg"}
