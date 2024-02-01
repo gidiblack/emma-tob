@@ -27,28 +27,32 @@ function ContactTabs({
       country: "Nigeria",
       address: "Grace House, Atan/Lusada Road Near Evans Plc,",
       address2: "Ago-Eto Idawojo, Agbara, Ogun State",
-      email: "emmatobonline@gmail.com, ogunsonsltd@gmail.com",
+      email:
+        "admin@emma-tob.com, emmatobonline@gmail.com, ogunsonsltd@gmail.com",
       phone: "+234-803-716-0902, +234-807-777-7100, +234-813-799-1608",
     },
     {
       country: "Ghana",
       address: "Sawmill Kawererekwanano Tarkwa, Tarkwa Nsuaem Municipal",
       address2: "Western Region, P. O. Box 431, Tarkwa",
-      email: "emmatobonline@gmail.com, ogunsonsltd@gmail.com",
+      email:
+        "admin@emma-tob.com, emmatobonline@gmail.com, ogunsonsltd@gmail.com",
       phone: "(+233)-548-724-944",
     },
     {
       country: "Cameroun",
       address: `ETS OGUNLADE  & SONS`,
       address2: `4781 Bonaberi Douala`,
-      email: "emmatobonline@gmail.com, ogunsonsltd@gmail.com",
+      email:
+        "admin@emma-tob.com, emmatobonline@gmail.com, ogunsonsltd@gmail.com",
       phone: "(+237)-670-513-089, 675-452-708",
     },
     {
       country: "Switzerland",
       address: "Wolfackerstrasse 6",
       address2: "4622 Egerkingen, Switzerland",
-      email: "emmatobonline@gmail.com, ogunsonsltd@gmail.com",
+      email:
+        "admin@emma-tob.com, emmatobonline@gmail.com, ogunsonsltd@gmail.com",
       phone: "+41 763 838 336",
     },
   ];
