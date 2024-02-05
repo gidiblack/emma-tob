@@ -36,6 +36,10 @@ export const industries = [
     value: "Energy & Natural Resources",
   },
   {
+    name: "Fast-moving Consumer Goods",
+    value: "Fast-moving Consumer Goods",
+  },
+  {
     name: "Finance & Insurance",
     value: "Finance & Insurance",
   },
@@ -54,6 +58,10 @@ export const industries = [
   {
     name: "Iron and Aluminum Casting",
     value: "Iron and Aluminum Casting",
+  },
+  {
+    name: "Manufacturing",
+    value: "Manufacturing",
   },
   {
     name: "Real Estate",

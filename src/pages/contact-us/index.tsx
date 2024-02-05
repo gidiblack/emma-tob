@@ -74,7 +74,7 @@ function Contactus() {
             status: "success",
             position: "top",
             description:
-              "Email sent successfully, a respresentative will respond within 24 hours",
+              "Email sent successfully, a representative will respond within 24 hours",
           });
           resetForm();
         })
