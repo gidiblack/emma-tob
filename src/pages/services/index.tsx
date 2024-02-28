@@ -81,7 +81,7 @@ const productsList = [
     line2:
       "Emmatob Academy has a team of seasoned professionals with a wealth of extensive field and practical experience in the industry. Our training programs leverage this wealth of expertise to enhance your career development. Join us and embark on a journey to elevate your professional growth.",
     image: [{ img: training, name: "" }],
-    href: "https://forms.gle/8vYXtRTAxr8oXF1v8",
+    href: "https://zfrmz.eu/IKmiK03I2uv2GEMVONxT",
   },
 ];
 
