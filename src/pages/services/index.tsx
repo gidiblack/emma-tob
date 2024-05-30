@@ -75,13 +75,13 @@ const productsList = [
     ],
   },
   {
-    title: "Training and Consultancy",
+    title: "Emma-tob International Academy",
     description:
       "We offer various types of Training Programmes from basic to advanced levels for various groups - SIWES, NYSC, Industrial staff, apprenticeship, corporate, off-site, and on-site Training along our business areas.",
     line2:
-      "Emmatob Academy has a team of seasoned professionals with a wealth of extensive field and practical experience in the industry. Our training programs leverage this wealth of expertise to enhance your career development. Join us and embark on a journey to elevate your professional growth.",
+      "Emmatob International Academy has a team of seasoned professionals with a wealth of extensive field and practical experience in the industry. Our training programs leverage this wealth of expertise to enhance your career development. Join us and embark on a journey to elevate your professional growth.",
     image: [{ img: training, name: "" }],
-    href: "https://zfrmz.eu/IKmiK03I2uv2GEMVONxT",
+    href: "https://zfrmz.com/kqZR2DWYxHQJt4qtRZVY",
   },
 ];
 
