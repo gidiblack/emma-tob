@@ -6,6 +6,7 @@ const routes = {
   contactus: "/contact-us",
   terms: "/terms",
   privacy: "/privacy",
+  academy: "https://academy.emma-tob.com",
 };
 
 export default routes;

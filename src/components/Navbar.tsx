@@ -35,6 +35,10 @@ const Links = [
     href: routes.aboutus,
   },
   {
+    label: "Academy",
+    href: routes.academy,
+  },
+  {
     label: <Button mx={-2.5}>Contact us</Button>,
     href: routes.contactus,
   },
@@ -64,6 +68,7 @@ const NavLink = ({
       color: "brand.300",
     }}
     href={href}
+    target={href.includes("https:") ? "_blank" : undefined}
     onClick={onClick}
   >
     {children}

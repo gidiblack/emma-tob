@@ -30,6 +30,7 @@ const FooterLink = ({
       color: "brand.500",
     }}
     href={href}
+    target={href.includes("https:") ? "_blank" : undefined}
   >
     {children}
   </Link>
@@ -51,6 +52,10 @@ const Links1 = [
   {
     label: "Contact us",
     href: routes.contactus,
+  },
+  {
+    label: "Academy",
+    href: routes.academy,
   },
 ];
 
